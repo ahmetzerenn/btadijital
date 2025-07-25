@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Hizmetlerimiz - BTA Dijital</title>
+    <link rel="stylesheet" href="styles.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="btadijital.jpg" as="image">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html"><img src="btadijital.jpg" alt="BTA Dijital Logo" style="height: 68px; border-radius: 14px; box-shadow: 0 2px 8px rgba(5,150,105,0.08); background: #fff; padding: 2px;"></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">Hakkımızda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link active">Hizmetler</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="influencer.html" class="nav-link">Influencer Marketing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">İletişim</a>
+                </li>
+                <li class="nav-item nav-login-theme">
+                    <button class="nav-link login-btn" onclick="openLoginModal()"><i class="fas fa-user"></i> Giriş Yap</button>
+                    <button id="themeToggleBtn" class="nav-link" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; margin-left: 8px;" onclick="toggleTheme()" title="Gece/Gündüz Modu">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Giriş Yap</h2>
+            <form id="loginForm">
+                <input type="text" placeholder="Kullanıcı Adı" required>
+                <input type="password" placeholder="Şifre" required>
+                <button type="submit" class="btn btn-primary">Giriş Yap</button>
+            </form>
+            <div class="demo-credentials">
+                <p><strong>Demo Kullanıcılar:</strong></p>
+                <p>Admin: admin / admin123</p>
+                <p>Editor: editor / editor123</p>
+                <p>Customer: customer / customer123</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hizmetlerimiz</h1>
+                <p>Dijital pazarlama ihtiyaçlarınız için kapsamlı çözümler sunuyoruz</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview" style="padding: 4rem 0; background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #f0f9ff 100%);">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Neden BTA Dijital?</h2>
+                <p>10+ yıllık deneyimimizle 500+ başarılı proje tamamladık</p>
+            </div>
+            <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div class="stat-card" style="text-align: center; padding: 2rem; background: rgba(255, 255, 255, 0.9); border-radius: 16px; box-shadow: 0 8px 25px rgba(16, 185, 129, 0.1);">
+                    <i class="fas fa-trophy" style="font-size: 3rem; color: #10b981; margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 2.5rem; font-weight: 800; color: #10b981; margin-bottom: 0.5rem;">500+</h3>
+                    <p style="color: #6b7280; font-weight: 500;">Başarılı Proje</p>
+                </div>
+                <div class="stat-card" style="text-align: center; padding: 2rem; background: rgba(255, 255, 255, 0.9); border-radius: 16px; box-shadow: 0 8px 25px rgba(16, 185, 129, 0.1);">
+                    <i class="fas fa-users" style="font-size: 3rem; color: #10b981; margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 2.5rem; font-weight: 800; color: #10b981; margin-bottom: 0.5rem;">200+</h3>
+                    <p style="color: #6b7280; font-weight: 500;">Mutlu Müşteri</p>
+                </div>
+                <div class="stat-card" style="text-align: center; padding: 2rem; background: rgba(255, 255, 255, 0.9); border-radius: 16px; box-shadow: 0 8px 25px rgba(16, 185, 129, 0.1);">
+                    <i class="fas fa-chart-line" style="font-size: 3rem; color: #10b981; margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 2.5rem; font-weight: 800; color: #10b981; margin-bottom: 0.5rem;">%300</h3>
+                    <p style="color: #6b7280; font-weight: 500;">Ortalama ROI</p>
+                </div>
+                <div class="stat-card" style="text-align: center; padding: 2rem; background: rgba(255, 255, 255, 0.9); border-radius: 16px; box-shadow: 0 8px 25px rgba(16, 185, 129, 0.1);">
+                    <i class="fas fa-clock" style="font-size: 3rem; color: #10b981; margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 2.5rem; font-weight: 800; color: #10b981; margin-bottom: 0.5rem;">24/7</h3>
+                    <p style="color: #6b7280; font-weight: 500;">Destek</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-detailed">
+        <div class="container">
+            <!-- SEO Service -->
+            <div id="seo" class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon-large">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="service-info">
+                        <h2>SEO Optimizasyonu</h2>
+                        <p>Google'da üst sıralarda yer alın. Organik trafiğinizi artırın ve markanızın görünürlüğünü maksimize edin.</p>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <div class="service-features">
+                        <h3>Hizmet Kapsamımız</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Anahtar kelime analizi ve araştırması</li>
+                            <li><i class="fas fa-check"></i> Teknik SEO optimizasyonu</li>
+                            <li><i class="fas fa-check"></i> İçerik stratejisi ve optimizasyonu</li>
+                            <li><i class="fas fa-check"></i> Backlink yönetimi</li>
+                            <li><i class="fas fa-check"></i> Yerel SEO optimizasyonu</li>
+                            <li><i class="fas fa-check"></i> Performans raporlama</li>
+                        </ul>
+                    </div>
+                    <div class="service-benefits">
+                        <h3>Faydalar</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <i class="fas fa-chart-line"></i>
+                                <h4>Organik Trafik Artışı</h4>
+                                <p>%200-500 arası organik trafik artışı</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-bullseye"></i>
+                                <h4>Hedef Kitle</h4>
+                                <p>Doğru anahtar kelimelerle hedef kitlenize ulaşın</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-dollar-sign"></i>
+                                <h4>Maliyet Etkinliği</h4>
+                                <p>Uzun vadede düşük maliyetli pazarlama</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Ads Service -->
+            <div id="google-ads" class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon-large">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <div class="service-info">
+                        <h2>Google Ads</h2>
+                        <p>Hedef kitlenize doğrudan ulaşın. ROI odaklı reklam kampanyaları ile satışlarınızı artırın.</p>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <div class="service-features">
+                        <h3>Hizmet Kapsamımız</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Search Ads kampanyaları</li>
+                            <li><i class="fas fa-check"></i> Display Ads yönetimi</li>
+                            <li><i class="fas fa-check"></i> Remarketing stratejileri</li>
+                            <li><i class="fas fa-check"></i> Shopping Ads optimizasyonu</li>
+                            <li><i class="fas fa-check"></i> Video Ads kampanyaları</li>
+                            <li><i class="fas fa-check"></i> Performans analizi ve optimizasyon</li>
+                        </ul>
+                    </div>
+                    <div class="service-benefits">
+                        <h3>Faydalar</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <i class="fas fa-rocket"></i>
+                                <h4>Hızlı Sonuç</h4>
+                                <p>Anında görünürlük ve trafik</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-chart-bar"></i>
+                                <h4>Ölçülebilir ROI</h4>
+                                <p>Detaylı performans raporları</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-users"></i>
+                                <h4>Hedef Kitle</h4>
+                                <p>Demografik ve davranışsal hedefleme</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media Service -->
+            <div id="social-media" class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon-large">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <div class="service-info">
+                        <h2>Sosyal Medya Yönetimi</h2>
+                        <p>Sosyal medya varlığınızı güçlendirin. Etkileşimi artırın ve markanızla bağlantı kurun.</p>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <div class="service-features">
+                        <h3>Hizmet Kapsamımız</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> İçerik yönetimi ve planlama</li>
+                            <li><i class="fas fa-check"></i> Topluluk yönetimi</li>
+                            <li><i class="fas fa-check"></i> Sosyal medya reklamları</li>
+                            <li><i class="fas fa-check"></i> Influencer işbirlikleri</li>
+                            <li><i class="fas fa-check"></i> Kriz yönetimi</li>
+                            <li><i class="fas fa-check"></i> Performans raporlama</li>
+                        </ul>
+                    </div>
+                    <div class="service-benefits">
+                        <h3>Faydalar</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <i class="fas fa-heart"></i>
+                                <h4>Marka Sadakati</h4>
+                                <p>Güçlü müşteri bağlantıları</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-rocket"></i>
+                                <h4>Viral Potansiyel</h4>
+                                <p>Organik paylaşım ve etkileşim</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-eye"></i>
+                                <h4>Görünürlük</h4>
+                                <p>Geniş kitlelere ulaşım</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Design Service -->
+            <div id="web-design" class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon-large">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="service-info">
+                        <h2>Web Tasarım ve Geliştirme</h2>
+                        <p>Modern, responsive ve kullanıcı dostu web siteleri tasarlayın. Dönüşüm oranlarınızı artırın.</p>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <div class="service-features">
+                        <h3>Hizmet Kapsamımız</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> UI/UX tasarım</li>
+                            <li><i class="fas fa-check"></i> Responsive web tasarım</li>
+                            <li><i class="fas fa-check"></i> E-ticaret siteleri</li>
+                            <li><i class="fas fa-check"></i> WordPress geliştirme</li>
+                            <li><i class="fas fa-check"></i> Web uygulamaları</li>
+                            <li><i class="fas fa-check"></i> Bakım ve güncelleme</li>
+                        </ul>
+                    </div>
+                    <div class="service-benefits">
+                        <h3>Faydalar</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h4>Mobil Uyumlu</h4>
+                                <p>Tüm cihazlarda mükemmel görünüm</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <h4>Hızlı Yükleme</h4>
+                                <p>Optimize edilmiş performans</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-shopping-cart"></i>
+                                <h4>Dönüşüm Odaklı</h4>
+                                <p>Satış artışı için tasarım</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Marketing Service -->
+            <div id="content-marketing" class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon-large">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <div class="service-info">
+                        <h2>İçerik Pazarlaması</h2>
+                        <p>Değerli içeriklerle hedef kitlenizi çekin. Markanızı otorite haline getirin.</p>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <div class="service-features">
+                        <h3>Hizmet Kapsamımız</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Blog yazıları ve makaleler</li>
+                            <li><i class="fas fa-check"></i> Video içerik üretimi</li>
+                            <li><i class="fas fa-check"></i> İnfografik tasarımı</li>
+                            <li><i class="fas fa-check"></i> E-posta pazarlaması</li>
+                            <li><i class="fas fa-check"></i> Sosyal medya içerikleri</li>
+                            <li><i class="fas fa-check"></i> İçerik stratejisi</li>
+                        </ul>
+                    </div>
+                    <div class="service-benefits">
+                        <h3>Faydalar</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <h4>Eğitici İçerik</h4>
+                                <p>Hedef kitlenizi eğitin</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-crown"></i>
+                                <h4>Marka Otoritesi</h4>
+                                <p>Sektörde lider konuma gelin</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-link"></i>
+                                <h4>Backlink Kazanımı</h4>
+                                <p>Doğal link oluşturma</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics Service -->
+            <div id="analytics" class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon-large">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="service-info">
+                        <h2>Analitik ve Raporlama</h2>
+                        <p>Veri odaklı kararlar alın. Kampanyalarınızın performansını ölçün ve optimize edin.</p>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <div class="service-features">
+                        <h3>Hizmet Kapsamımız</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Google Analytics kurulumu</li>
+                            <li><i class="fas fa-check"></i> Conversion tracking</li>
+                            <li><i class="fas fa-check"></i> A/B testleri</li>
+                            <li><i class="fas fa-check"></i> Performans raporları</li>
+                            <li><i class="fas fa-check"></i> KPI takibi</li>
+                            <li><i class="fas fa-check"></i> Dashboard oluşturma</li>
+                        </ul>
+                    </div>
+                    <div class="service-benefits">
+                        <h3>Faydalar</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <h4>Veri Odaklı Kararlar</h4>
+                                <p>Bilimsel yaklaşım</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-arrow-up"></i>
+                                <h4>Sürekli İyileştirme</h4>
+                                <p>Optimizasyon fırsatları</p>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-target"></i>
+                                <h4>Hedef Odaklı</h4>
+                                <p>KPI'ları takip edin</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section" style="padding: 6rem 0; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fcd34d 100%);">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Çalışma Sürecimiz</h2>
+                <p>Projelerinizi başarıya ulaştırmak için 4 adımlı sürecimizi takip ediyoruz</p>
+            </div>
+            <div class="process-steps" style="margin-top: 3rem;">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Analiz ve Planlama</h3>
+                        <p>Hedeflerinizi, rakiplerinizi ve pazarınızı analiz ediyoruz. Kapsamlı bir dijital pazarlama stratejisi oluşturuyoruz.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Uygulama</h3>
+                        <p>Belirlenen stratejiyi uygulamaya koyuyoruz. Tüm kanallarda koordineli çalışma yürütüyoruz.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>İzleme ve Optimizasyon</h3>
+                        <p>Performansı sürekli izliyor ve optimize ediyoruz. Veri odaklı iyileştirmeler yapıyoruz.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Raporlama ve Büyüme</h3>
+                        <p>Düzenli raporlar sunuyoruz. Başarıları ölçüyor ve büyüme stratejileri geliştiriyoruz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Projenizi Başlatalım</h2>
+                <p>Dijital pazarlama hedeflerinizi gerçekleştirmek için bizimle iletişime geçin. Ücretsiz danışmanlık için hemen başvurun.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Ücretsiz Danışmanlık</a>
+                    <a href="tel:+905551234567" class="btn btn-secondary">Hemen Ara</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BTA Dijital</h3>
+                    <p>Dijital pazarlama dünyasında markanızı öne çıkarıyoruz. Profesyonel ekibimizle hedeflerinize ulaşmanızı sağlıyoruz.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Hizmetlerimiz</h4>
+                    <ul>
+                        <li><a href="#seo">SEO Optimizasyonu</a></li>
+                        <li><a href="#google-ads">Google Ads</a></li>
+                        <li><a href="#social-media">Sosyal Medya</a></li>
+                        <li><a href="#web-design">Web Tasarım</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Şirket</h4>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="influencer.html">Influencer Marketing</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>İletişim</h4>
+                    <p>Email: info@btadijital.com</p>
+                    <p>Tel: +90 555 123 45 67</p>
+                    <p>Adres: İstanbul, Türkiye</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BTA Dijital. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sabit Teklif Al Butonu ve Popup Form -->
+    <button class="fixed-cta" id="openQuoteBtn"><i class="fas fa-comments"></i> Teklif Al</button>
+    <div class="modal" id="quoteModal">
+        <div class="modal-content">
+            <h2>Hızlı Teklif Al</h2>
+            <form id="quoteForm">
+                <input type="text" name="name" placeholder="Adınız Soyadınız" required>
+                <input type="email" name="email" placeholder="E-posta Adresiniz" required>
+                <input type="tel" name="phone" placeholder="Telefon Numaranız">
+                <input type="text" name="company" placeholder="Şirket Adı">
+                <textarea name="project" placeholder="Kısaca projenizi anlatın..." rows="3" required></textarea>
+                <button type="submit" class="btn btn-primary">Teklif İste</button>
+                <button type="button" class="btn btn-secondary" id="closeQuoteBtn">İptal</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.min.js"></script>
+</body>
+</html> 

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>BTA Dijital - Dijital Pazarlama Ajansı | SEO, Google Ads, Influencer Marketing</title>
+    <meta name="description" content="BTA Dijital ile dijital pazarlama dünyasında başarıya ulaşın. SEO, Google Ads, Influencer Marketing ve web tasarım hizmetleri.">
+    <meta name="keywords" content="dijital pazarlama, SEO, Google Ads, influencer marketing, web tasarım, İstanbul">
+    <meta name="author" content="BTA Dijital">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://btadijital.com/">
+    <meta property="og:title" content="BTA Dijital - Dijital Pazarlama Ajansı">
+    <meta property="og:description" content="Dijital pazarlama alanında uzmanlaşmış ekibimiz ile işletmenizi dijital dünyada öne çıkarıyoruz.">
+    <meta property="og:image" content="https://btadijital.com/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://btadijital.com/">
+    <meta property="twitter:title" content="BTA Dijital - Dijital Pazarlama Ajansı">
+    <meta property="twitter:description" content="Dijital pazarlama alanında uzmanlaşmış ekibimiz ile işletmenizi dijital dünyada öne çıkarıyoruz.">
+    <meta property="twitter:image" content="https://btadijital.com/images/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://btadijital.com/">
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "BTA Dijital",
+        "url": "https://btadijital.com",
+        "logo": "https://btadijital.com/images/logo.png",
+        "description": "Dijital pazarlama alanında uzmanlaşmış ekibimiz ile işletmenizi dijital dünyada öne çıkarıyoruz.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "addressCountry": "TR"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+90-212-555-0123",
+            "contactType": "customer service",
+            "email": "info@btadijital.com"
+        },
+        "sameAs": [
+            "https://facebook.com/btadijital",
+            "https://twitter.com/btadijital",
+            "https://instagram.com/btadijital",
+            "https://linkedin.com/company/btadijital"
+        ]
+    }
+    </script>
+    <link rel="stylesheet" href="styles.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="btadijital.jpg" as="image">
+    
+    <!-- Preloader -->
+    <style>
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #059669;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .preloader.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #059669, #10b981);
+            z-index: 1001;
+            transition: width 0.1s ease;
+        }
+        
+        /* Back to top button enhancement */
+    </style>
+</head>
+<body>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <img src="btadijital.jpg" alt="BTA Dijital Logo" style="width: 90px; height: 90px; object-fit: contain; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.10); background: #fff; padding: 8px; display: block; margin: 0 auto 16px auto;" />
+        <div class="preloader-progress-bar-bg">
+            <div class="preloader-progress-bar" id="preloaderProgressBar"></div>
+        </div>
+    </div>
+    
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" style="position: fixed; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.9); color: white; padding: 1rem; z-index: 1000; display: none;">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div style="flex: 1; min-width: 300px;">
+                <p style="margin: 0; font-size: 0.9rem;">
+                    Bu web sitesi deneyiminizi geliştirmek için çerezler kullanır. 
+                    <a href="#" style="color: #10b981; text-decoration: underline;">Çerez Politikamız</a> hakkında daha fazla bilgi edinin.
+                </p>
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+                <button onclick="acceptCookies()" style="background: #10b981; color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; font-size: 0.9rem;">Kabul Et</button>
+                <button onclick="declineCookies()" style="background: transparent; color: white; border: 1px solid white; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; font-size: 0.9rem;">Reddet</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html"><img src="btadijital.jpg" alt="BTA Dijital Logo" style="height: 68px; border-radius: 14px; box-shadow: 0 2px 8px rgba(5,150,105,0.08); background: #fff; padding: 2px;"></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">Hakkımızda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Hizmetler</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="influencer.html" class="nav-link">Influencer Marketing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">İletişim</a>
+                </li>
+                <li class="nav-item nav-login-theme">
+                    <button class="nav-link login-btn" onclick="openLoginModal()"><i class="fas fa-user"></i> Giriş Yap</button>
+                    <button id="themeToggleBtn" class="nav-link" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; margin-left: 8px;" onclick="toggleTheme()" title="Gece/Gündüz Modu">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Dijital Dünyada <span class="highlight">Başarı</span> İçin</h1>
+                <p class="hero-subtitle">Modern dijital pazarlama stratejileri ile markanızı dijital dünyada öne çıkarın. SEO, sosyal medya, Google Ads ve daha fazlası.</p>
+                <div class="hero-buttons">
+                    <a href="services.html" class="btn btn-primary">Hizmetlerimiz</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-graphic">
+                    <!-- Sosyal medya ikonları PNG/SVG dosyası olarak -->
+                    <span class="floating-social" style="--i:1">
+                        <img src="instagram-logo.svg" alt="Instagram" />
+                    </span>
+                    <span class="floating-social" style="--i:2">
+                        <img src="tiktok-logo.svg" alt="TikTok" />
+                    </span>
+                    <span class="floating-social" style="--i:3">
+                        <img src="facebook-logo.svg" alt="Facebook" />
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Hero Stats -->
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <span class="hero-stat-number">500+</span>
+                <span class="hero-stat-label">Mutlu Müşteri</span>
+            </div>
+            <div class="hero-stat">
+                <span class="hero-stat-number">1000+</span>
+                <span class="hero-stat-label">Tamamlanan Proje</span>
+            </div>
+            <div class="hero-stat">
+                <span class="hero-stat-number">5+</span>
+                <span class="hero-stat-label">Yıllık Deneyim</span>
+            </div>
+            <div class="hero-stat">
+                <span class="hero-stat-number">%300</span>
+                <span class="hero-stat-label">Ortalama Artış</span>
+            </div>
+        </div>
+        
+        <!-- Hero Features -->
+        <div class="hero-features">
+            <div class="hero-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>Ücretsiz Danışmanlık</span>
+            </div>
+            <div class="hero-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>7/24 Destek</span>
+            </div>
+            <div class="hero-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>Ölçülebilir Sonuçlar</span>
+            </div>
+            <div class="hero-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>Garantili Başarı</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview Section -->
+    <section class="services-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hizmetlerimiz</h2>
+                <p>Dijital pazarlama ihtiyaçlarınız için kapsamlı çözümler sunuyoruz</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>SEO Optimizasyonu</h3>
+                    <p>Google'da üst sıralarda yer alın. Organik trafiğinizi artırın ve markanızın görünürlüğünü maksimize edin.</p>
+                    <a href="services.html#seo" class="service-link">Detayları Gör <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <h3>Google Ads</h3>
+                    <p>Hedef kitlenize doğrudan ulaşın. ROI odaklı reklam kampanyaları ile satışlarınızı artırın.</p>
+                    <a href="services.html#google-ads" class="service-link">Detayları Gör <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Influencer Marketing</h3>
+                    <p>Doğru influencer'lar ile markanızı güçlendirin. Otantik içerikler ile hedef kitlenize ulaşın.</p>
+                    <a href="influencer.html" class="service-link">Detayları Gör <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="services-cta">
+                <a href="services.html" class="btn btn-primary">Tüm Hizmetlerimizi Görün</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>BTA Dijital Hakkında</h2>
+                    <p>2018 yılından bu yana dijital pazarlama alanında hizmet veren BTA Dijital, işletmelerin dijital dönüşüm süreçlerinde güvenilir partneri olmaktan gurur duymaktadır.</p>
+                    <p>Deneyimli ekibimiz ile birlikte, her sektörden müşterilerimize özel dijital pazarlama stratejileri geliştiriyor ve ölçülebilir sonuçlar elde etmelerini sağlıyoruz.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h3>500+</h3>
+                            <p>Mutlu Müşteri</p>
+                        </div>
+                        <div class="stat">
+                            <h3>1000+</h3>
+                            <p>Tamamlanan Proje</p>
+                        </div>
+                        <div class="stat">
+                            <h3>5+</h3>
+                            <p>Yıllık Deneyim</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-graphic">
+                        <i class="fas fa-users"></i>
+                        <i class="fas fa-trophy"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Blog Posts -->
+    <section class="blog-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Son Blog Yazılarımız</h2>
+                <p>Dijital pazarlama dünyasından en güncel bilgiler ve ipuçları</p>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="blog-content">
+                        <h3>2024 SEO Trendleri</h3>
+                        <p>Bu yılın en önemli SEO trendlerini ve algoritma değişikliklerini keşfedin.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 15 Mart 2024</span>
+                            <span><i class="fas fa-clock"></i> 5 dk okuma</span>
+                        </div>
+                        <a href="blog.html" class="blog-link">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Influencer Marketing Stratejileri</h3>
+                        <p>Doğru influencer seçimi ve etkili kampanya yönetimi için ipuçları.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 12 Mart 2024</span>
+                            <span><i class="fas fa-clock"></i> 7 dk okuma</span>
+                        </div>
+                        <a href="blog.html" class="blog-link">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Google Ads Optimizasyonu</h3>
+                        <p>Google Ads kampanyalarınızı optimize ederek ROI'nizi artırmanın yolları.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 10 Mart 2024</span>
+                            <span><i class="fas fa-clock"></i> 6 dk okuma</span>
+                        </div>
+                        <a href="blog.html" class="blog-link">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+            <div class="blog-cta">
+                <a href="blog.html" class="btn btn-secondary">Tüm Blog Yazılarını Görün</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Başarı Hikayeleri / Case Study Bölümü -->
+    <section class="case-studies">
+        <div class="container">
+            <div class="section-header">
+                <h2>Başarı Hikayelerimiz</h2>
+                <p>Müşterilerimizle birlikte elde ettiğimiz gerçek sonuçlar</p>
+            </div>
+            <div class="case-studies-grid">
+                <div class="case-card">
+                    <div class="case-title">E-Ticaret Markası: %300 Satış Artışı</div>
+                    <div class="case-desc">SEO ve Google Ads entegrasyonu ile 6 ayda %300 satış artışı sağladık. Organik trafik 4 katına çıktı.</div>
+                    <div class="case-tags"><span>SEO</span><span>Google Ads</span></div>
+                </div>
+                <div class="case-card">
+                    <div class="case-title">Hizmet Sektörü: %400 ROI</div>
+                    <div class="case-desc">Hedefli reklam kampanyaları ile %400 ROI ve %200 lead artışı elde edildi.</div>
+                    <div class="case-tags"><span>Google Ads</span><span>Lead Generation</span></div>
+                </div>
+                <div class="case-card">
+                    <div class="case-title">Yerel İşletme: %500 Etkileşim</div>
+                    <div class="case-desc">Sosyal medya influencer kampanyası ile %500 etkileşim ve %250 takipçi artışı sağlandı.</div>
+                    <div class="case-tags"><span>Influencer</span><span>Sosyal Medya</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Dijital Başarı Yolculuğunuza Başlayın</h2>
+                <p>Markanızı dijital dünyada öne çıkarmak için uzman ekibimizle çalışın</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Ücretsiz Danışmanlık Alın</a>
+                    <a href="services.html" class="btn btn-secondary">Hizmetlerimizi Keşfedin</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referanslar / Müşteri Yorumları Bölümü -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Müşterilerimiz Ne Diyor?</h2>
+                <p>BTA Dijital ile çalışan markaların gerçek yorumları</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">“BTA Dijital sayesinde Google Ads harcamalarımız %40 azaldı, dönüşüm oranımız ise ikiye katlandı!”</div>
+                    <div class="testimonial-author">- Ayşe K., E-Ticaret Yöneticisi</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">“Sosyal medya yönetiminde hem yaratıcılık hem de raporlama konusunda çok iyiler. Takımımıza değer kattılar.”</div>
+                    <div class="testimonial-author">- Mehmet D., Marka Müdürü</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">“SEO danışmanlığı ile 6 ayda organik trafiğimiz %300 arttı. Herkese tavsiye ederim.”</div>
+                    <div class="testimonial-author">- Elif S., Pazarlama Direktörü</div>
+                </div>
+            </div>
+            <div class="references-trust" style="text-align:center; margin-top:2rem; font-size:1.2rem; color:#059669; font-weight:600; letter-spacing:0.5px;">
+                100+ mutlu müşteri ve marka BTA Dijital'e güveniyor.
+            </div>
+        </div>
+    </section>
+
+    <!-- Giriş Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content" style="max-width: 400px;">
+            <h2>Giriş Yap</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Kullanıcı Adı" required>
+                <input type="password" id="password" placeholder="Şifre" required>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Giriş Yap</button>
+                <button type="button" class="btn btn-secondary" onclick="closeLoginModal()" style="width: 100%; margin-top: 0.5rem;">İptal</button>
+            </form>
+            <div style="margin-top: 1rem; text-align: center; font-size: 0.9rem; color: #6b7280;">
+                <p><strong>Demo Kullanıcılar:</strong></p>
+                <p>Admin: admin / 123456</p>
+                <p>Editör: editor / 123456</p>
+                <p>Müşteri: customer / 123456</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sabit Teklif Al Butonu ve Popup Form -->
+    <button class="fixed-cta" id="openQuoteBtn"><i class="fas fa-comments"></i> Teklif Al</button>
+    <div class="modal" id="quoteModal">
+        <div class="modal-content">
+            <h2>Hızlı Teklif Al</h2>
+            <form id="quoteForm">
+                <input type="text" name="name" placeholder="Adınız Soyadınız" required>
+                <input type="email" name="email" placeholder="E-posta Adresiniz" required>
+                <input type="tel" name="phone" placeholder="Telefon Numaranız">
+                <input type="text" name="company" placeholder="Şirket Adı">
+                <textarea name="project" placeholder="Kısaca projenizi anlatın..." rows="3" required></textarea>
+                <button type="submit" class="btn btn-primary">Teklif İste</button>
+                <button type="button" class="btn btn-secondary" id="closeQuoteBtn">İptal</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.min.js"></script>
+    <script>
+    // Giriş sistemi
+    function openLoginModal() {
+        document.getElementById('loginModal').classList.add('active');
+    }
+    
+    function closeLoginModal() {
+        document.getElementById('loginModal').classList.remove('active');
+        document.getElementById('loginForm').reset();
+    }
+    
+    // Cookie Consent Functions
+    function acceptCookies() {
+        localStorage.setItem('cookiesAccepted', 'true');
+        document.getElementById('cookieConsent').style.display = 'none';
+    }
+    
+    function declineCookies() {
+        localStorage.setItem('cookiesAccepted', 'false');
+        document.getElementById('cookieConsent').style.display = 'none';
+    }
+    
+    function showCookieConsent() {
+        const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+        if (!cookiesAccepted) {
+            setTimeout(() => {
+                document.getElementById('cookieConsent').style.display = 'block';
+            }, 2000);
+        }
+    }
+    
+    // Demo kullanıcılar
+    const users = [
+        { username: 'admin', password: '123456', role: 'admin' },
+        { username: 'editor', password: '123456', role: 'editor' },
+        { username: 'customer', password: '123456', role: 'customer' }
+    ];
+    
+    // DOM yüklendiğinde event listener'ları ekle
+    document.addEventListener('DOMContentLoaded', function() {
+        // Preloader
+        setTimeout(() => {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.classList.add('fade-out');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }
+        }, 1000);
+        
+        // Show Cookie Consent
+        showCookieConsent();
+        
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            if (scrollProgress) {
+                const scrollTop = window.pageYOffset;
+                const docHeight = document.body.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+                scrollProgress.style.width = scrollPercent + '%';
+            }
+        });
+        
+        // Enhanced Back to Top Button
+        const backToTopBtn = document.createElement('button');
+        backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        backToTopBtn.className = 'back-to-top';
+        document.body.appendChild(backToTopBtn);
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Giriş formu
+        const loginForm = document.getElementById('loginForm');
+        if (loginForm) {
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                
+                // Kullanıcı doğrulama
+                const user = users.find(u => u.username === username && u.password === password);
+                
+                if (user) {
+                    // Giriş başarılı
+                    localStorage.setItem('userRole', user.role);
+                    localStorage.setItem('username', user.username);
+                    closeLoginModal();
+                    
+                    // Kullanıcıyı panele yönlendir
+                    window.location.href = 'dashboard.html';
+                } else {
+                    alert('Kullanıcı adı veya şifre hatalı!');
+                }
+            });
+        }
+        
+        // Teklif formu
+        const quoteForm = document.getElementById('quoteForm');
+        if (quoteForm) {
+            quoteForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Talebiniz başarıyla iletildi! En kısa sürede sizinle iletişime geçeceğiz.');
+                document.getElementById('quoteModal').classList.remove('active');
+                this.reset();
+            });
+        }
+        
+        // Teklif modal butonları
+        const openQuoteBtn = document.getElementById('openQuoteBtn');
+        const closeQuoteBtn = document.getElementById('closeQuoteBtn');
+        
+        if (openQuoteBtn) {
+            openQuoteBtn.addEventListener('click', function() {
+                document.getElementById('quoteModal').classList.add('active');
+            });
+        }
+        
+        if (closeQuoteBtn) {
+            closeQuoteBtn.addEventListener('click', function() {
+                document.getElementById('quoteModal').classList.remove('active');
+            });
+        }
+        
+        // Smooth scroll for all internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add loading animation to buttons
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (this.type !== 'submit') {
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Yükleniyor...';
+                    this.disabled = true;
+                    
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.disabled = false;
+                    }, 1000);
+                }
+            });
+        });
+    });
+    </script>
+    <!-- Lottie ve animasyon scriptleri kaldırıldı -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BTA Dijital</h3>
+                    <p>Dijital pazarlama alanında uzmanlaşmış ekibimiz ile işletmenizi dijital dünyada öne çıkarıyoruz.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Hizmetler</h4>
+                    <ul>
+                        <li><a href="services.html">SEO Optimizasyonu</a></li>
+                        <li><a href="services.html">Google Ads</a></li>
+                        <li><a href="influencer.html">Influencer Marketing</a></li>
+                        <li><a href="services.html">Web Tasarım</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Şirket</h4>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                        <li><a href="influencer.html">Influencer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>İletişim</h4>
+                    <p><i class="fas fa-phone"></i> +90 (212) 555 0123</p>
+                    <p><i class="fas fa-envelope"></i> info@btadijital.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BTA Dijital. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

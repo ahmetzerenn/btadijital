@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Hakkımızda - BTA Dijital</title>
+    <link rel="stylesheet" href="styles.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="btadijital.jpg" as="image">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html"><img src="btadijital.jpg" alt="BTA Dijital Logo" style="height: 68px; border-radius: 14px; box-shadow: 0 2px 8px rgba(5,150,105,0.08); background: #fff; padding: 2px;"></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link active">Hakkımızda</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Hizmetler</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="influencer.html" class="nav-link">Influencer Marketing</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">İletişim</a></li>
+                <li class="nav-item nav-login-theme">
+                    <button class="nav-link login-btn" onclick="openLoginModal()"><i class="fas fa-user"></i> Giriş Yap</button>
+                    <button id="themeToggleBtn" class="nav-link" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; margin-left: 8px;" onclick="toggleTheme()" title="Gece/Gündüz Modu">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Giriş Yap</h2>
+            <form id="loginForm">
+                <input type="text" placeholder="Kullanıcı Adı" required>
+                <input type="password" placeholder="Şifre" required>
+                <button type="submit" class="btn btn-primary">Giriş Yap</button>
+            </form>
+            <div class="demo-credentials">
+                <p><strong>Demo Kullanıcılar:</strong></p>
+                <p>Admin: admin / admin123</p>
+                <p>Editor: editor / editor123</p>
+                <p>Customer: customer / customer123</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hakkımızda</h1>
+                <p>BTA Dijital olarak, dijital pazarlama dünyasında markanızı öne çıkarmak için tutkuyla çalışıyoruz.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ajans Hikayesi & Vizyon-Misyon -->
+    <section class="about-section" style="padding: 4rem 0; background: #f9fafb;">
+        <div class="container">
+            <div class="about-content" style="display: flex; flex-wrap: wrap; gap: 3rem; align-items: center;">
+                <div style="flex: 1 1 320px; min-width: 320px;">
+                    <h2 style="font-size: 2.2rem; font-weight: 800; color: #059669; margin-bottom: 1.2rem;">Dijitalde Güçlü, Güvenilir ve Yenilikçi</h2>
+                    <p style="font-size: 1.1rem; color: #374151; margin-bottom: 1.5rem;">2018 yılından bu yana, farklı sektörlerden yüzlerce markaya dijital pazarlama, SEO, Google Ads, sosyal medya yönetimi ve web tasarım alanlarında hizmet veriyoruz. Her projede, müşterilerimizin hedeflerine ulaşmasını sağlayacak özgün ve yenilikçi stratejiler geliştiriyoruz.</p>
+                    <ul style="color: #059669; font-weight: 600; margin-bottom: 1.5rem;">
+                        <li><i class="fas fa-check-circle"></i> 500+ Mutlu Müşteri</li>
+                        <li><i class="fas fa-check-circle"></i> 1000+ Tamamlanan Proje</li>
+                        <li><i class="fas fa-check-circle"></i> 5+ Yıllık Deneyim</li>
+                        <li><i class="fas fa-check-circle"></i> %300 Ortalama ROI</li>
+                    </ul>
+                    <p style="color: #374151;">Misyonumuz; markaların dijitalde sürdürülebilir başarıya ulaşmasını sağlamak. Vizyonumuz; Türkiye'nin en yenilikçi ve güvenilir dijital ajansı olmak.</p>
+                </div>
+                <div style="flex: 1 1 320px; min-width: 320px; text-align: center;">
+                    <img src="btadijital.jpg" alt="BTA Dijital Ekip" style="max-width: 320px; border-radius: 18px; box-shadow: 0 4px 24px rgba(5,150,105,0.10); background: #fff; padding: 10px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ekip Tanıtımı -->
+    <section class="about-team" style="padding: 4rem 0; background: #fff;">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Ekibimiz</h2>
+                <p>Alanında uzman, yaratıcı ve tutkulu bir ekibiz.</p>
+            </div>
+            <div class="team-grid" style="display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: center; margin-top: 2.5rem;">
+                <div class="team-member" style="background: #f3f4f6; border-radius: 16px; box-shadow: 0 2px 12px rgba(5,150,105,0.08); padding: 2rem 1.5rem; text-align: center; width: 240px;">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ekip Üyesi" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                    <h4 style="margin-bottom: 0.3rem; color: #059669; font-weight: 700;">Ahmet Yılmaz</h4>
+                    <p style="color: #374151; font-size: 1rem; margin-bottom: 0.5rem;">Kurucu & SEO Uzmanı</p>
+                    <p style="color: #6b7280; font-size: 0.95rem;">Dijitalde büyümenin anahtarı doğru stratejidir.</p>
+                </div>
+                <div class="team-member" style="background: #f3f4f6; border-radius: 16px; box-shadow: 0 2px 12px rgba(5,150,105,0.08); padding: 2rem 1.5rem; text-align: center; width: 240px;">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ekip Üyesi" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                    <h4 style="margin-bottom: 0.3rem; color: #059669; font-weight: 700;">Elif Demir</h4>
+                    <p style="color: #374151; font-size: 1rem; margin-bottom: 0.5rem;">Sosyal Medya Yöneticisi</p>
+                    <p style="color: #6b7280; font-size: 0.95rem;">Markanızı sosyalde büyütmek için buradayım.</p>
+                </div>
+                <div class="team-member" style="background: #f3f4f6; border-radius: 16px; box-shadow: 0 2px 12px rgba(5,150,105,0.08); padding: 2rem 1.5rem; text-align: center; width: 240px;">
+                    <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Ekip Üyesi" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                    <h4 style="margin-bottom: 0.3rem; color: #059669; font-weight: 700;">Mehmet Kaya</h4>
+                    <p style="color: #374151; font-size: 1rem; margin-bottom: 0.5rem;">Web Geliştirici</p>
+                    <p style="color: #6b7280; font-size: 0.95rem;">Modern ve hızlı web siteleri geliştiriyorum.</p>
+                </div>
+                <div class="team-member" style="background: #f3f4f6; border-radius: 16px; box-shadow: 0 2px 12px rgba(5,150,105,0.08); padding: 2rem 1.5rem; text-align: center; width: 240px;">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ekip Üyesi" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                    <h4 style="margin-bottom: 0.3rem; color: #059669; font-weight: 700;">Zeynep Aksoy</h4>
+                    <p style="color: #374151; font-size: 1rem; margin-bottom: 0.5rem;">İçerik Pazarlama Uzmanı</p>
+                    <p style="color: #6b7280; font-size: 0.95rem;">İçerik kraldır, doğru içerik markanızı büyütür.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Başarılar & Kilometre Taşları (Timeline) -->
+    <section class="about-timeline" style="padding: 4rem 0; background: #f3f4f6;">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Başarılarımız & Kilometre Taşları</h2>
+            </div>
+            <div class="timeline" style="max-width: 700px; margin: 2.5rem auto 0 auto;">
+                <div style="border-left: 3px solid #059669; padding-left: 2rem;">
+                    <div style="margin-bottom: 2.2rem;">
+                        <span style="font-weight: 700; color: #059669;">2018</span> – BTA Dijital kuruldu.
+                    </div>
+                    <div style="margin-bottom: 2.2rem;">
+                        <span style="font-weight: 700; color: #059669;">2019</span> – 100. müşterimize ulaştık.
+                    </div>
+                    <div style="margin-bottom: 2.2rem;">
+                        <span style="font-weight: 700; color: #059669;">2020</span> – İlk uluslararası projemizi tamamladık.
+                    </div>
+                    <div style="margin-bottom: 2.2rem;">
+                        <span style="font-weight: 700; color: #059669;">2022</span> – Sektörde inovasyon ödülü aldık.
+                    </div>
+                    <div>
+                        <span style="font-weight: 700; color: #059669;">2023</span> – 1000+ projeye ulaştık, ekip büyüdü.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neden BTA Dijital? -->
+    <section class="about-why" style="padding: 4rem 0; background: #fff;">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Neden BTA Dijital?</h2>
+            </div>
+            <div class="why-grid" style="display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: center; margin-top: 2.5rem;">
+                <div style="flex: 1 1 220px; min-width: 220px; background: #f3f4f6; border-radius: 14px; padding: 2rem; text-align: center; box-shadow: 0 2px 12px rgba(5,150,105,0.08);">
+                    <i class="fas fa-lightbulb" style="font-size: 2.2rem; color: #059669; margin-bottom: 0.7rem;"></i>
+                    <h4 style="color: #059669; font-weight: 700; margin-bottom: 0.5rem;">Yenilikçi Stratejiler</h4>
+                    <p style="color: #374151;">Her projede özgün ve güncel dijital çözümler sunuyoruz.</p>
+                </div>
+                <div style="flex: 1 1 220px; min-width: 220px; background: #f3f4f6; border-radius: 14px; padding: 2rem; text-align: center; box-shadow: 0 2px 12px rgba(5,150,105,0.08);">
+                    <i class="fas fa-users" style="font-size: 2.2rem; color: #059669; margin-bottom: 0.7rem;"></i>
+                    <h4 style="color: #059669; font-weight: 700; margin-bottom: 0.5rem;">Müşteri Odaklılık</h4>
+                    <p style="color: #374151;">İhtiyaçlarınıza özel, şeffaf ve sürdürülebilir hizmet anlayışı.</p>
+                </div>
+                <div style="flex: 1 1 220px; min-width: 220px; background: #f3f4f6; border-radius: 14px; padding: 2rem; text-align: center; box-shadow: 0 2px 12px rgba(5,150,105,0.08);">
+                    <i class="fas fa-award" style="font-size: 2.2rem; color: #059669; margin-bottom: 0.7rem;"></i>
+                    <h4 style="color: #059669; font-weight: 700; margin-bottom: 0.5rem;">Başarı ve Güven</h4>
+                    <p style="color: #374151;">500+ mutlu müşteri ve 1000+ başarılı proje ile sektörde güven.</p>
+                </div>
+                <div style="flex: 1 1 220px; min-width: 220px; background: #f3f4f6; border-radius: 14px; padding: 2rem; text-align: center; box-shadow: 0 2px 12px rgba(5,150,105,0.08);">
+                    <i class="fas fa-globe" style="font-size: 2.2rem; color: #059669; margin-bottom: 0.7rem;"></i>
+                    <h4 style="color: #059669; font-weight: 700; margin-bottom: 0.5rem;">Uluslararası Deneyim</h4>
+                    <p style="color: #374151;">Yurt içi ve yurt dışı projelerde kanıtlanmış başarı.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referanslar / Müşteri Yorumları -->
+    <section class="about-testimonials" style="padding: 4rem 0; background: #f9fafb;">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Referanslar & Müşteri Yorumları</h2>
+            </div>
+            <div class="testimonials-grid" style="display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: center; margin-top: 2.5rem;">
+                <div class="testimonial-card" style="background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(5,150,105,0.08); padding: 2rem 1.5rem; width: 320px;">
+                    <p style="color: #374151; font-size: 1.05rem; margin-bottom: 1.2rem;">“BTA Dijital ile çalışmak markamız için büyük bir şanstı. Kısa sürede organik trafiğimizde ciddi artış yaşadık.”</p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Müşteri" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <strong style="color: #059669;">Mert K.</strong><br>
+                            <span style="color: #6b7280; font-size: 0.95rem;">E-Ticaret Yöneticisi</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" style="background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(5,150,105,0.08); padding: 2rem 1.5rem; width: 320px;">
+                    <p style="color: #374151; font-size: 1.05rem; margin-bottom: 1.2rem;">“Sosyal medya yönetiminde aldığımız sonuçlar ve ekip iletişimi harikaydı. Tavsiye ederim!”</p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Müşteri" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <strong style="color: #059669;">Selin A.</strong><br>
+                            <span style="color: #6b7280; font-size: 0.95rem;">Pazarlama Müdürü</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" style="background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(5,150,105,0.08); padding: 2rem 1.5rem; width: 320px;">
+                    <p style="color: #374151; font-size: 1.05rem; margin-bottom: 1.2rem;">“Web sitemiz hem hızlı hem de modern oldu. Tüm süreçte şeffaf ve çözüm odaklıydılar.”</p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Müşteri" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <strong style="color: #059669;">Barış T.</strong><br>
+                            <span style="color: #6b7280; font-size: 0.95rem;">Girişimci</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sıkça Sorulan Sorular (SSS) -->
+    <section class="about-faq" style="padding: 4rem 0; background: #fff;">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Sıkça Sorulan Sorular</h2>
+            </div>
+            <div class="faq-grid" style="max-width: 700px; margin: 2.5rem auto 0 auto;">
+                <div class="faq-item">
+                    <div class="faq-question"><h3>BTA Dijital hangi sektörlerde hizmet veriyor?</h3><i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer"><p>E-ticaret, sağlık, eğitim, finans, turizm, teknoloji ve daha birçok sektörde deneyimimiz var.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><h3>Ajansınızın farkı nedir?</h3><i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer"><p>Yenilikçi stratejiler, şeffaf iletişim ve sürdürülebilir başarıya odaklanıyoruz.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><h3>Çalışma süreciniz nasıl işliyor?</h3><i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer"><p>Analiz, uygulama, izleme/optimizasyon ve raporlama adımlarını izliyoruz.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><h3>Ücretsiz danışmanlık alabilir miyim?</h3><i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer"><p>Evet, iletişim sayfamızdan hemen başvurabilirsiniz.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ofis Fotoğrafları (örnek) -->
+    <section class="about-gallery" style="padding: 4rem 0; background: #f9fafb;">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Ofisimizden Kareler</h2>
+            </div>
+            <div class="gallery-grid" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-top: 2.5rem;">
+                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Ofis 1" style="width: 260px; border-radius: 14px; box-shadow: 0 2px 12px rgba(5,150,105,0.08);">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Ofis 2" style="width: 260px; border-radius: 14px; box-shadow: 0 2px 12px rgba(5,150,105,0.08);">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Ofis 3" style="width: 260px; border-radius: 14px; box-shadow: 0 2px 12px rgba(5,150,105,0.08);">
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ekibimizle Tanışın</h2>
+                <p>Dijital pazarlama hedeflerinizi gerçekleştirmek için bizimle iletişime geçin. Ücretsiz danışmanlık için hemen başvurun.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Ücretsiz Danışmanlık</a>
+                    <a href="tel:+905551234567" class="btn btn-secondary">Hemen Ara</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BTA Dijital</h3>
+                    <p>Dijital pazarlama dünyasında markanızı öne çıkarıyoruz. Profesyonel ekibimizle hedeflerinize ulaşmanızı sağlıyoruz.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Hizmetlerimiz</h4>
+                    <ul>
+                        <li><a href="services.html#seo">SEO Optimizasyonu</a></li>
+                        <li><a href="services.html#google-ads">Google Ads</a></li>
+                        <li><a href="services.html#social-media">Sosyal Medya</a></li>
+                        <li><a href="services.html#web-design">Web Tasarım</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Şirket</h4>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="about.html">Hakkımızda</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="influencer.html">Influencer Marketing</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>İletişim</h4>
+                    <p>Email: info@btadijital.com</p>
+                    <p>Tel: +90 555 123 45 67</p>
+                    <p>Adres: İstanbul, Türkiye</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BTA Dijital. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sabit Teklif Al Butonu ve Popup Form -->
+    <button class="fixed-cta" id="openQuoteBtn"><i class="fas fa-comments"></i> Teklif Al</button>
+    <div class="modal" id="quoteModal">
+        <div class="modal-content">
+            <h2>Hızlı Teklif Al</h2>
+            <form id="quoteForm">
+                <input type="text" name="name" placeholder="Adınız Soyadınız" required>
+                <input type="email" name="email" placeholder="E-posta Adresiniz" required>
+                <input type="tel" name="phone" placeholder="Telefon Numaranız">
+                <input type="text" name="company" placeholder="Şirket Adı">
+                <textarea name="project" placeholder="Kısaca projenizi anlatın..." rows="3" required></textarea>
+                <button type="submit" class="btn btn-primary">Teklif İste</button>
+                <button type="button" class="btn btn-secondary" id="closeQuoteBtn">İptal</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.min.js"></script>
+    <script>
+    // Teklif Al Popup
+    document.addEventListener('DOMContentLoaded', function() {
+        var openBtn = document.getElementById('openQuoteBtn');
+        var modal = document.getElementById('quoteModal');
+        var closeBtn = document.getElementById('closeQuoteBtn');
+        if(openBtn && modal && closeBtn) {
+            openBtn.onclick = function() { modal.classList.add('active'); };
+            closeBtn.onclick = function() { modal.classList.remove('active'); };
+            window.onclick = function(e) { if(e.target === modal) modal.classList.remove('active'); };
+        }
+    });
+    </script>
+</body>
+</html> 

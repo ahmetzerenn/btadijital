@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Blog - BTA Dijital</title>
+    <link rel="stylesheet" href="styles.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="btadijital.jpg" as="image">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html"><img src="btadijital.jpg" alt="BTA Dijital Logo" style="height: 68px; border-radius: 14px; box-shadow: 0 2px 8px rgba(5,150,105,0.08); background: #fff; padding: 2px;"></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">Hakkımızda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Hizmetler</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link active">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="influencer.html" class="nav-link">Influencer Marketing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">İletişim</a>
+                </li>
+                <li class="nav-item nav-login-theme">
+                    <button class="nav-link login-btn" onclick="openLoginModal()"><i class="fas fa-user"></i> Giriş Yap</button>
+                    <button id="themeToggleBtn" class="nav-link" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; margin-left: 8px;" onclick="toggleTheme()" title="Gece/Gündüz Modu">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Giriş Yap</h2>
+            <form id="loginForm">
+                <input type="text" placeholder="Kullanıcı Adı" required>
+                <input type="password" placeholder="Şifre" required>
+                <button type="submit" class="btn btn-primary">Giriş Yap</button>
+            </form>
+            <div class="demo-credentials">
+                <p><strong>Demo Kullanıcılar:</strong></p>
+                <p>Admin: admin / admin123</p>
+                <p>Editor: editor / editor123</p>
+                <p>Customer: customer / customer123</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Blog</h1>
+                <p>Dijital pazarlama dünyasından en güncel bilgiler, ipuçları ve trendler</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Posts Section -->
+    <section class="featured-posts" style="padding: 4rem 0; background: linear-gradient(135deg, #fefce8 0%, #fef3c7 50%, #fde68a 100%);">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Öne Çıkan Yazılar</h2>
+                <p>En popüler ve güncel dijital pazarlama içeriklerimizi keşfedin</p>
+            </div>
+            <div class="featured-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <article class="featured-card" style="background: rgba(255, 255, 255, 0.95); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(251, 191, 36, 0.15); border: 1px solid rgba(251, 191, 36, 0.1); backdrop-filter: blur(10px);">
+                    <div class="featured-image" style="height: 200px; background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-rocket" style="font-size: 3rem; color: white;"></i>
+                    </div>
+                    <div class="featured-content" style="padding: 2rem;">
+                        <div class="blog-category" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600; display: inline-block; margin-bottom: 1rem;">Dijital Pazarlama</div>
+                        <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; color: #1f2937; line-height: 1.4;">2024 Dijital Pazarlama Trendleri</h3>
+                        <p style="color: #6b7280; line-height: 1.6; margin-bottom: 1.5rem;">Bu yılın en önemli dijital pazarlama trendlerini ve stratejilerini keşfedin. Yapay zeka, otomasyon ve kişiselleştirme nasıl pazarlamayı değiştiriyor?</p>
+                        <div class="blog-meta" style="display: flex; gap: 1rem; margin-bottom: 1.5rem; font-size: 0.9rem;">
+                            <span style="color: #9ca3af; display: flex; align-items: center; gap: 0.3rem;"><i class="fas fa-calendar"></i> 20 Mart 2024</span>
+                            <span style="color: #9ca3af; display: flex; align-items: center; gap: 0.3rem;"><i class="fas fa-clock"></i> 12 dk okuma</span>
+                        </div>
+                        <a href="#" class="blog-link" style="color: #f59e0b; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="featured-card" style="background: rgba(255, 255, 255, 0.95); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(251, 191, 36, 0.15); border: 1px solid rgba(251, 191, 36, 0.1); backdrop-filter: blur(10px);">
+                    <div class="featured-image" style="height: 200px; background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-chart-line" style="font-size: 3rem; color: white;"></i>
+                    </div>
+                    <div class="featured-content" style="padding: 2rem;">
+                        <div class="blog-category" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600; display: inline-block; margin-bottom: 1rem;">SEO</div>
+                        <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; color: #1f2937; line-height: 1.4;">Google Core Web Vitals Optimizasyonu</h3>
+                        <p style="color: #6b7280; line-height: 1.6; margin-bottom: 1.5rem;">Core Web Vitals metriklerini optimize ederek sitenizin performansını artırın ve Google sıralamalarında yükselin.</p>
+                        <div class="blog-meta" style="display: flex; gap: 1rem; margin-bottom: 1.5rem; font-size: 0.9rem;">
+                            <span style="color: #9ca3af; display: flex; align-items: center; gap: 0.3rem;"><i class="fas fa-calendar"></i> 18 Mart 2024</span>
+                            <span style="color: #9ca3af; display: flex; align-items: center; gap: 0.3rem;"><i class="fas fa-clock"></i> 10 dk okuma</span>
+                        </div>
+                        <a href="#" class="blog-link" style="color: #f59e0b; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="featured-card" style="background: rgba(255, 255, 255, 0.95); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(251, 191, 36, 0.15); border: 1px solid rgba(251, 191, 36, 0.1); backdrop-filter: blur(10px);">
+                    <div class="featured-image" style="height: 200px; background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-users" style="font-size: 3rem; color: white;"></i>
+                    </div>
+                    <div class="featured-content" style="padding: 2rem;">
+                        <div class="blog-category" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600; display: inline-block; margin-bottom: 1rem;">Influencer Marketing</div>
+                        <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; color: #1f2937; line-height: 1.4;">Mikro Influencer Stratejileri</h3>
+                        <p style="color: #6b7280; line-height: 1.6; margin-bottom: 1.5rem;">Mikro influencer'lar ile nasıl daha etkili kampanyalar oluşturabilir ve ROI'nizi artırabilirsiniz?</p>
+                        <div class="blog-meta" style="display: flex; gap: 1rem; margin-bottom: 1.5rem; font-size: 0.9rem;">
+                            <span style="color: #9ca3af; display: flex; align-items: center; gap: 0.3rem;"><i class="fas fa-calendar"></i> 16 Mart 2024</span>
+                            <span style="color: #9ca3af; display: flex; align-items: center; gap: 0.3rem;"><i class="fas fa-clock"></i> 8 dk okuma</span>
+                        </div>
+                        <a href="#" class="blog-link" style="color: #f59e0b; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Categories -->
+    <section class="blog-categories">
+        <div class="container">
+            <!-- Search and Sort Controls -->
+            <div class="blog-controls" style="margin-bottom: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+                <div style="flex: 1; min-width: 250px;">
+                    <input type="text" id="blogSearch" placeholder="Blog yazılarında arayın..." style="width: 100%; padding: 0.8rem; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
+                </div>
+                <select id="blogSort" style="padding: 0.8rem; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 1rem; background: white;">
+                    <option value="newest">En Yeni</option>
+                    <option value="oldest">En Eski</option>
+                    <option value="title">Başlığa Göre</option>
+                </select>
+            </div>
+            
+            <div class="categories-filter">
+                <button class="category-btn active" data-category="all">Tümü <span class="category-count" id="count-all">0</span></button>
+                <button class="category-btn" data-category="seo">SEO <span class="category-count" id="count-seo">0</span></button>
+                <button class="category-btn" data-category="google-ads">Google Ads <span class="category-count" id="count-google-ads">0</span></button>
+                <button class="category-btn" data-category="social-media">Sosyal Medya <span class="category-count" id="count-social-media">0</span></button>
+                <button class="category-btn" data-category="influencer">Influencer Marketing <span class="category-count" id="count-influencer">0</span></button>
+                <button class="category-btn" data-category="web-design">Web Tasarım <span class="category-count" id="count-web-design">0</span></button>
+                <button class="category-btn" data-category="analytics">Analitik <span class="category-count" id="count-analytics">0</span></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="blog-posts">
+        <div class="container">
+            <div class="blog-grid">
+                <!-- SEO Posts -->
+                <article class="blog-card" data-category="seo">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x300" alt="SEO Trendleri" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">SEO</div>
+                        <h3>2024 SEO Trendleri: Yapay Zeka ve Kullanıcı Deneyimi</h3>
+                        <p>Bu yılın en önemli SEO trendlerini ve algoritma değişikliklerini keşfedin. Yapay zeka destekli arama motorları nasıl çalışıyor?</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 15 Mart 2024</span>
+                            <span><i class="fas fa-clock"></i> 8 dk okuma</span>
+                        </div>
+                        <a href="#" class="blog-link">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="seo">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x300" alt="Yerel SEO Stratejileri" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">SEO</div>
+                        <h3>Yerel SEO Stratejileri: Yerel İşletmeler İçin Rehber</h3>
+                        <p>Yerel arama sonuçlarında üst sıralarda yer almak için uygulamanız gereken SEO stratejileri nelerdir?</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 12 Mart 2024</span>
+                            <span><i class="fas fa-clock"></i> 6 dk okuma</span>
+                        </div>
+                        <a href="#" class="blog-link">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Google Ads Posts -->
+                <article class="blog-card" data-category="google-ads">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x300" alt="Google Ads Optimizasyonu" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Google Ads</div>
+                        <h3>Google Ads Optimizasyonu: ROI'nizi %300 Artırın</h3>
+                        <p>Google Ads kampanyalarınızı optimize ederek ROI'nizi artırmanın 10 etkili yolu. Bütçenizi verimli kullanın.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 10 Mart 2024</span>
+                            <span><i class="fas fa-clock"></i> 10 dk okuma</span>
+                        </div>
+                        <a href="#" class="blog-link">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="google-ads">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x300" alt="E-ticaret Google Ads Stratejileri" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Google Ads</div>
+                        <h3>E-ticaret Google Ads Stratejileri</h3>
+                        <p>E-ticaret siteniz için en etkili Google Ads kampanya türleri ve optimizasyon teknikleri.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 8 Mart 2024</span>
+                            <span><i class="fas fa-clock"></i> 7 dk okuma</span>
+                        </div>
+                        <a href="#" class="blog-link">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Social Media Posts -->
+                <article class="blog-card" data-category="social-media">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x300" alt="Instagram Reels" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Sosyal Medya</div>
+                        <h3>Instagram Reels ile Markanızı Büyütün</h3>
+                        <p>Instagram Reels kullanarak markanızı nasıl büyütebilir ve genç kitlelere ulaşabilirsiniz?</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 6 Mart 2024</span>
+                            <span><i class="fas fa-clock"></i> 5 dk okuma</span>
+                        </div>
+                        <a href="#" class="blog-link">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="social-media">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x300" alt="Hashtag Stratejileri" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Sosyal Medya</div>
+                        <h3>Hashtag Stratejileri: Viral Olmanın Yolları</h3>
+                        <p>Doğru hashtag kullanımı ile içeriklerinizin viral olma potansiyelini artırın.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 4 Mart 2024</span>
+                            <span><i class="fas fa-clock"></i> 4 dk okuma</span>
+                        </div>
+                        <a href="#" class="blog-link">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Influencer Marketing Posts -->
+                <article class="blog-card" data-category="influencer">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x300" alt="Doğru Influencer Seçimi" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Influencer Marketing</div>
+                        <h3>Doğru Influencer Seçimi: 5 Kritik Faktör</h3>
+                        <p>Markanız için doğru influencer'ı seçerken dikkat etmeniz gereken 5 kritik faktör.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 2 Mart 2024</span>
+                            <span><i class="fas fa-clock"></i> 6 dk okuma</span>
+                        </div>
+                        <a href="#" class="blog-link">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Web Design Posts -->
+                <article class="blog-card" data-category="web-design">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x300" alt="2024 Web Tasarım Trendleri" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Web Tasarım</div>
+                        <h3>2024 Web Tasarım Trendleri</h3>
+                        <p>Bu yılın en popüler web tasarım trendlerini ve kullanıcı deneyimi yaklaşımlarını keşfedin.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 1 Mart 2024</span>
+                            <span><i class="fas fa-clock"></i> 9 dk okuma</span>
+                        </div>
+                        <a href="#" class="blog-link">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Analytics Posts -->
+                <article class="blog-card" data-category="analytics">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x300" alt="Google Analytics 4 Rehberi" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Analitik</div>
+                        <h3>Google Analytics 4 Rehberi</h3>
+                        <p>GA4'e geçiş yaparken dikkat etmeniz gereken noktalar ve yeni özelliklerin avantajları.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 28 Şubat 2024</span>
+                            <span><i class="fas fa-clock"></i> 11 dk okuma</span>
+                        </div>
+                        <a href="#" class="blog-link">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Additional Posts -->
+                <article class="blog-card" data-category="seo">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x300" alt="Mobil SEO" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">SEO</div>
+                        <h3>Mobil SEO: Mobil Öncelikli İndeksleme</h3>
+                        <p>Google'ın mobil öncelikli indeksleme yaklaşımı ve mobil SEO optimizasyonu teknikleri.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 26 Şubat 2024</span>
+                            <span><i class="fas fa-clock"></i> 7 dk okuma</span>
+                        </div>
+                        <a href="#" class="blog-link">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="google-ads">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x300" alt="YouTube Reklamları" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Google Ads</div>
+                        <h3>YouTube Reklamları: Video Pazarlama Stratejileri</h3>
+                        <p>YouTube reklamları ile markanızı nasıl etkili bir şekilde tanıtabilir ve hedef kitlenize ulaşabilirsiniz?</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 24 Şubat 2024</span>
+                            <span><i class="fas fa-clock"></i> 8 dk okuma</span>
+                        </div>
+                        <a href="#" class="blog-link">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="social-media">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x300" alt="TikTok Pazarlaması" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Sosyal Medya</div>
+                        <h3>TikTok Pazarlaması: Gen Z'ye Ulaşmanın Yolları</h3>
+                        <p>TikTok'ta markanızı nasıl büyütebilir ve genç kitlelere etkili bir şekilde ulaşabilirsiniz?</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 22 Şubat 2024</span>
+                            <span><i class="fas fa-clock"></i> 6 dk okuma</span>
+                        </div>
+                        <a href="#" class="blog-link">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="influencer">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x300" alt="Influencer Marketing ROI Hesaplama" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Influencer Marketing</div>
+                        <h3>Influencer Marketing ROI Hesaplama</h3>
+                        <p>Influencer marketing kampanyalarınızın ROI'sini nasıl hesaplayabilir ve optimize edebilirsiniz?</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 20 Şubat 2024</span>
+                            <span><i class="fas fa-clock"></i> 9 dk okuma</span>
+                        </div>
+                        <a href="#" class="blog-link">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container" style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-primary" id="loadMoreBtn" style="padding: 1rem 2rem; font-size: 1.1rem;">
+                    <i class="fas fa-plus"></i> Daha Fazla Yazı Yükle
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section" style="padding: 6rem 0; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);">
+        <div class="container">
+            <div class="newsletter-content text-center">
+                <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; color: #1f2937;">Güncel Kalın</h2>
+                <p style="font-size: 1.2rem; color: #6b7280; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Dijital pazarlama dünyasından en güncel bilgileri almak için bültenimize abone olun.</p>
+                <div class="newsletter-form" style="display: flex; gap: 1rem; max-width: 500px; margin: 0 auto; flex-wrap: wrap;">
+                    <input type="email" placeholder="E-posta adresiniz" style="flex: 1; min-width: 250px; padding: 1rem; border: 2px solid rgba(16, 185, 129, 0.2); border-radius: 12px; font-size: 1rem;">
+                    <button class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1rem;">Abone Ol</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BTA Dijital</h3>
+                    <p>Dijital pazarlama dünyasında markanızı öne çıkarıyoruz. Profesyonel ekibimizle hedeflerinize ulaşmanızı sağlıyoruz.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Kategoriler</h4>
+                    <ul>
+                        <li><a href="#seo">SEO</a></li>
+                        <li><a href="#google-ads">Google Ads</a></li>
+                        <li><a href="#social-media">Sosyal Medya</a></li>
+                        <li><a href="#influencer">Influencer Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Şirket</h4>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="services.html">Hizmetler</a></li>
+                        <li><a href="influencer.html">Influencer Marketing</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>İletişim</h4>
+                    <p>Email: info@btadijital.com</p>
+                    <p>Tel: +90 555 123 45 67</p>
+                    <p>Adres: İstanbul, Türkiye</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BTA Dijital. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sabit Teklif Al Butonu ve Popup Form -->
+    <button class="fixed-cta" id="openQuoteBtn"><i class="fas fa-comments"></i> Teklif Al</button>
+    <div class="modal" id="quoteModal">
+        <div class="modal-content">
+            <h2>Hızlı Teklif Al</h2>
+            <form id="quoteForm">
+                <input type="text" name="name" placeholder="Adınız Soyadınız" required>
+                <input type="email" name="email" placeholder="E-posta Adresiniz" required>
+                <input type="tel" name="phone" placeholder="Telefon Numaranız">
+                <input type="text" name="company" placeholder="Şirket Adı">
+                <textarea name="project" placeholder="Kısaca projenizi anlatın..." rows="3" required></textarea>
+                <button type="submit" class="btn btn-primary">Teklif İste</button>
+                <button type="button" class="btn btn-secondary" id="closeQuoteBtn">İptal</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.min.js"></script>
+    <script>
+    // Teklif Al Popup
+    document.addEventListener('DOMContentLoaded', function() {
+        var openBtn = document.getElementById('openQuoteBtn');
+        var modal = document.getElementById('quoteModal');
+        var closeBtn = document.getElementById('closeQuoteBtn');
+        if(openBtn && modal && closeBtn) {
+            openBtn.onclick = function() { modal.classList.add('active'); };
+            closeBtn.onclick = function() { modal.classList.remove('active'); };
+            window.onclick = function(e) { if(e.target === modal) modal.classList.remove('active'); };
+        }
+        // Back to Top Button
+        const backToTopBtn = document.createElement('button');
+        backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        backToTopBtn.className = 'back-to-top';
+        document.body.appendChild(backToTopBtn);
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+    </script>
+</body>
+</html> 

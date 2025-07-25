@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>BTA Dijital Panel</title>
+    <link rel="stylesheet" href="styles.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="btadijital.jpg" as="image">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .dashboard-header {
+            background: #a80000;
+            color: white;
+            padding: 2rem 0 1rem 0;
+            margin-bottom: 2rem;
+        }
+        .dashboard-header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .dashboard-header .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .dashboard-header .user-actions {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        .dashboard-header .user-actions button,
+        .dashboard-header .user-actions a {
+            background: none;
+            border: none;
+            color: white;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .dashboard-header .user-actions button:hover,
+        .dashboard-header .user-actions a:hover {
+            color: #fbbf24;
+        }
+        .dashboard-header .add-branch-btn {
+            background: #666;
+            color: white;
+            border-radius: 8px;
+            padding: 0.7rem 1.5rem;
+            font-weight: 600;
+            margin-left: 1rem;
+            transition: background 0.2s;
+        }
+        .dashboard-header .add-branch-btn:hover {
+            background: #059669;
+        }
+        .dashboard-content {
+            padding: 2rem 0;
+        }
+        .branch-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .branch-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 1.5rem;
+            min-width: 320px;
+            max-width: 350px;
+            position: relative;
+        }
+        .branch-status {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            font-size: 0.9rem;
+            border-radius: 20px;
+            padding: 0.2rem 1rem;
+            margin-bottom: 0.7rem;
+        }
+        .branch-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+        .branch-info {
+            color: #6b7280;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        .branch-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .qr-btn {
+            background: #059669;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .qr-btn:hover {
+            background: #047857;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-btn {
+            background: #e5e7eb;
+            color: #333;
+            border: none;
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 110%;
+            right: 0;
+            background: white;
+            min-width: 160px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            border-radius: 8px;
+            z-index: 10;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 0.7rem 1rem;
+            color: #333;
+            text-decoration: none;
+            font-size: 0.98rem;
+            transition: background 0.2s;
+        }
+        .dropdown-content a:hover {
+            background: #f3f4f6;
+        }
+        .dropdown.open .dropdown-content {
+            display: block;
+        }
+        .qr-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.4);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .qr-modal.active {
+            display: flex;
+        }
+        .qr-modal-content {
+            background: white;
+            padding: 2rem 3rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+        }
+        .qr-modal-content img {
+            width: 180px;
+            margin-bottom: 1rem;
+        }
+        .qr-modal-content button {
+            margin-top: 1rem;
+            background: #059669;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .qr-modal-content button:hover {
+            background: #047857;
+        }
+        /* Modal for adding branch */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.3);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .modal.active {
+            display: flex;
+        }
+        .modal-content {
+            background: white;
+            padding: 2rem 2.5rem;
+            border-radius: 16px;
+            min-width: 320px;
+            max-width: 95vw;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+        }
+        .modal-content h2 {
+            margin-bottom: 1rem;
+        }
+        .modal-content label {
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+        .modal-content input {
+            width: 100%;
+            padding: 0.7rem;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 0.5rem;
+        }
+        .modal-content .modal-actions {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+        .modal-content button {
+            background: #059669;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .modal-content button.cancel {
+            background: #e5e7eb;
+            color: #333;
+        }
+        .modal-content button.cancel:hover {
+            background: #d1d5db;
+        }
+        @media (max-width: 600px) {
+            .dashboard-header .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .branch-list {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .modal-content {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="nav-logo">
+                <a href="index.html"><img src="btadijital.jpg" alt="BTA Dijital Logo" style="height: 68px; border-radius: 14px; box-shadow: 0 2px 8px rgba(5,150,105,0.08); background: #fff; padding: 2px;"></a>
+            </div>
+            <div class="user-actions">
+                <span>Hesabım</span>
+                <button onclick="logout()">Çıkış Yap</button>
+                <button onclick="showMenuList()" style="background: #666; color: white; border-radius: 8px; padding: 0.7rem 1.5rem; font-weight: 600; margin-left: 1rem; transition: background 0.2s; border: none; cursor: pointer;"><i class="fas fa-list"></i> Menü Listesi</button>
+                <button class="add-branch-btn" id="addBranchBtn"><i class="fas fa-plus"></i> Şube Ekle</button>
+            </div>
+        </div>
+    </header>
+    <main class="dashboard-content">
+        <div class="container">
+            <!-- Analitik Paneli Başlangıç -->
+            <div id="analyticsPanel" style="display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:2rem;align-items:flex-start;">
+                <div style="background:#059669;color:white;padding:1.2rem 2rem;border-radius:12px;min-width:180px;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+                    <div style="font-size:2rem;font-weight:700;" id="totalBranches">0</div>
+                    <div>Toplam Şube</div>
+                </div>
+                <div style="background:#047857;color:white;padding:1.2rem 2rem;border-radius:12px;min-width:180px;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+                    <div style="font-size:2rem;font-weight:700;" id="totalMenus">0</div>
+                    <div>Toplam Menü</div>
+                </div>
+                <div style="background:white;padding:1.2rem 2rem;border-radius:12px;min-width:220px;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+                    <div style="font-weight:600;margin-bottom:0.5rem;">Son Eklenen Şubeler</div>
+                    <ul id="recentBranches" style="padding-left:1.2em;margin:0;font-size:1rem;color:#059669;"></ul>
+                </div>
+                <div style="background:white;padding:1.2rem 2rem;border-radius:12px;min-width:220px;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+                    <div style="font-weight:600;margin-bottom:0.5rem;">Şube Başına Menü</div>
+                    <div id="branchMenuChart" style="height:60px;display:flex;align-items:flex-end;gap:0.5rem;"></div>
+                </div>
+            </div>
+            <!-- Analitik Paneli Bitiş -->
+            <input type="text" id="branchSearch" placeholder="Şubelerinizde arayın" style="width: 100%; max-width: 400px; margin-bottom: 2rem; padding: 0.7rem; border-radius: 8px; border: 1px solid #e5e7eb;">
+            <div class="branch-list" id="branchList">
+                <!-- Şube kartları burada olacak -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Şube Ekle Modal -->
+    <div class="modal" id="branchModal">
+        <div class="modal-content">
+            <h2>Şube Ekle</h2>
+            <label for="branchName">Şube Adı</label>
+            <input type="text" id="branchName" required>
+            <label for="branchLocation">Konum</label>
+            <input type="text" id="branchLocation" required>
+            <label for="branchPhone">Telefon</label>
+            <input type="text" id="branchPhone" required>
+            <label for="branchTables">Masa Sayısı</label>
+            <input type="number" id="branchTables" min="1" required>
+            <label for="branchWebsite">Websitesi</label>
+            <input type="url" id="branchWebsite" placeholder="https://..." required>
+            <div class="modal-actions">
+                <button class="cancel" id="cancelBranchBtn">İptal</button>
+                <button id="saveBranchBtn">Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- QR Kod Modal -->
+    <div class="qr-modal" id="qrModal">
+        <div class="qr-modal-content">
+            <img id="qrImage" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=Demo" alt="QR Kod">
+            <div id="qrBranchName" style="font-weight:600; margin-bottom:0.5rem;"></div>
+            <div id="qrBranchWebsite" style="margin-bottom:0.5rem; color:#059669;"></div>
+            <button onclick="closeQrModal()">Kapat</button>
+        </div>
+    </div>
+
+    <!-- Menü Oluştur Modal -->
+    <div class="modal" id="menuModal">
+        <div class="modal-content">
+            <h2 id="menuModalTitle">Menü Oluştur</h2>
+            <label for="menuName">Menü Adı</label>
+            <input type="text" id="menuName" placeholder="Örn: Kahvaltı Menüsü">
+            <label for="menuCategory">Kategori</label>
+            <select id="menuCategory" style="width: 100%; padding: 0.7rem; border-radius: 8px; border: 1px solid #e5e7eb; margin-bottom: 0.5rem;">
+                <option value="kahvalti">Kahvaltı</option>
+                <option value="ana-yemek">Ana Yemek</option>
+                <option value="tatli">Tatlı</option>
+                <option value="icecek">İçecek</option>
+                <option value="fast-food">Fast Food</option>
+            </select>
+            <label for="menuDescription">Açıklama (Opsiyonel)</label>
+            <textarea id="menuDescription" placeholder="Menü hakkında kısa açıklama..." style="width: 100%; padding: 0.7rem; border-radius: 8px; border: 1px solid #e5e7eb; margin-bottom: 0.5rem; resize: vertical; min-height: 80px;"></textarea>
+            <div class="modal-actions">
+                <button class="cancel" id="cancelMenuBtn">İptal</button>
+                <button id="saveMenuBtn">Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menü Detay Modal -->
+    <div class="modal" id="menuDetailModal">
+        <div class="modal-content" style="max-width: 800px;">
+            <h2 id="menuDetailTitle">Menü Detayları</h2>
+            <div id="menuDetailContent">
+                <!-- Menü detayları burada gösterilecek -->
+            </div>
+            <div class="modal-actions">
+                <button class="cancel" onclick="closeMenuDetailModal()">Kapat</button>
+                <button onclick="editMenuFromDetail()">Düzenle</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menü Öğesi Ekle Modal -->
+    <div class="modal" id="menuItemModal">
+        <div class="modal-content">
+            <h2 id="menuItemModalTitle">Menü Öğesi Ekle</h2>
+            <label for="itemName">Öğe Adı</label>
+            <input type="text" id="itemName" placeholder="Örn: Karışık Pizza">
+            <label for="itemPrice">Fiyat (₺)</label>
+            <input type="number" id="itemPrice" placeholder="0.00" step="0.01" min="0">
+            <label for="itemDescription">Açıklama</label>
+            <textarea id="itemDescription" placeholder="Öğe hakkında açıklama..." style="width: 100%; padding: 0.7rem; border-radius: 8px; border: 1px solid #e5e7eb; margin-bottom: 0.5rem; resize: vertical; min-height: 80px;"></textarea>
+            <label for="itemImage">Resim URL (Opsiyonel)</label>
+            <input type="url" id="itemImage" placeholder="https://...">
+            <div class="modal-actions">
+                <button class="cancel" id="cancelItemBtn">İptal</button>
+                <button id="saveItemBtn">Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rol Seçimi (Demo için) -->
+    <div class="modal" id="roleModal" style="z-index:3000;">
+        <div class="modal-content" style="min-width:300px;max-width:90vw;text-align:center;">
+            <h2>Rol Seçin</h2>
+            <button class="btn" onclick="setRole('admin')">Admin</button>
+            <button class="btn" onclick="setRole('editor')">Editör</button>
+            <button class="btn" onclick="setRole('customer')">Müşteri</button>
+        </div>
+    </div>
+
+    <script src="script.min.js"></script>
+    <script>
+        // Kullanıcı rolü kontrolü
+        let userRole = localStorage.getItem('userRole');
+        let username = localStorage.getItem('username');
+        
+        // Giriş yapmamış kullanıcıları anasayfaya yönlendir
+        if (!userRole || !username) {
+            alert('Lütfen önce giriş yapın!');
+            window.location.href = 'index.html';
+        }
+        
+        function renderRoleUI() {
+            // Admin: Her şey açık
+            // Editör: Şube ekle, düzenle, menü oluştur var, sil yok
+            // Müşteri: Sadece şube ve menü görüntüleme, ekleme yok
+            const addBranchBtn = document.getElementById('addBranchBtn');
+            if (userRole === 'admin' || userRole === 'editor') {
+                addBranchBtn.style.display = '';
+            } else {
+                addBranchBtn.style.display = 'none';
+            }
+            // Kullanıcı adını göster
+            const userActions = document.querySelector('.user-actions');
+            if (userRole === 'admin') userActions.querySelector('span').textContent = `Admin (${username})`;
+            else if (userRole === 'editor') userActions.querySelector('span').textContent = `Editör (${username})`;
+            else if (userRole === 'customer') userActions.querySelector('span').textContent = `Müşteri (${username})`;
+        }
+        
+        // Sayfa açılışında rol kontrolü
+        renderRoleUI();
+
+        // Demo için local state
+        let branches = [
+            {
+                name: "Kemeraltı Şube",
+                location: "Kemeraltı",
+                phone: "2323232323",
+                tables: 50,
+                status: "Açık",
+                website: "https://orneksube.com"
+            }
+        ];
+        // Menüleri de local olarak tut
+        let menus = [
+            // { id: 1, branchName: "Kemeraltı Şube", menuName: "Kahvaltı Menüsü", category: "kahvalti", description: "Geleneksel Türk kahvaltısı", items: [] }
+        ];
+        let editBranchIndex = null;
+        let editMenuIndex = null;
+        let currentMenuForItems = null;
+
+        function renderAnalytics() {
+            // Toplam şube
+            document.getElementById('totalBranches').textContent = branches.length;
+            // Toplam menü
+            document.getElementById('totalMenus').textContent = menus.length;
+            // Son eklenen şubeler (son 3)
+            const recent = branches.slice(-3).reverse();
+            const recentList = document.getElementById('recentBranches');
+            recentList.innerHTML = recent.map(b => `<li>${b.name}</li>`).join('');
+            // Şube başına menü çubuğu
+            const chart = document.getElementById('branchMenuChart');
+            chart.innerHTML = '';
+            branches.forEach(branch => {
+                const count = menus.filter(m => m.branchName === branch.name).length;
+                const bar = document.createElement('div');
+                bar.title = branch.name + ': ' + count + ' menü';
+                bar.style.height = (count * 18 + 8) + 'px';
+                bar.style.width = '22px';
+                bar.style.background = '#059669';
+                bar.style.borderRadius = '6px 6px 0 0';
+                bar.style.display = 'inline-block';
+                bar.style.marginRight = '2px';
+                bar.style.transition = 'height 0.3s';
+                bar.innerHTML = `<span style='font-size:0.8em;color:white;display:block;text-align:center;'>${count}</span>`;
+                chart.appendChild(bar);
+            });
+        }
+        
+        // Menü listesini göster
+        function showMenuList() {
+            const menuListHtml = menus.map((menu, idx) => `
+                <div style="background:white;border-radius:12px;padding:1.5rem;margin-bottom:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+                        <div>
+                            <h3 style="margin:0;color:#059669;font-size:1.2rem;">${menu.menuName}</h3>
+                            <p style="margin:0.3rem 0;color:#6b7280;">${menu.branchName}</p>
+                            <span style="background:#d1fae5;color:#065f46;padding:0.2rem 0.8rem;border-radius:15px;font-size:0.8rem;">${getCategoryName(menu.category)}</span>
+                        </div>
+                        <div style="display:flex;gap:0.5rem;">
+                            <button onclick="viewMenuDetail(${idx})" style="background:#059669;color:white;border:none;border-radius:8px;padding:0.5rem 1rem;cursor:pointer;">Görüntüle</button>
+                            <button onclick="editMenu(${idx})" style="background:#e5e7eb;color:#333;border:none;border-radius:8px;padding:0.5rem 1rem;cursor:pointer;">Düzenle</button>
+                            ${userRole === 'admin' ? `<button onclick="deleteMenu(${idx})" style="background:#ef4444;color:white;border:none;border-radius:8px;padding:0.5rem 1rem;cursor:pointer;">Sil</button>` : ''}
+                        </div>
+                    </div>
+                    <p style="color:#6b7280;margin:0;">${menu.description || 'Açıklama yok'}</p>
+                    <p style="color:#059669;font-weight:600;margin:0.5rem 0 0 0;">${menu.items ? menu.items.length : 0} öğe</p>
+                </div>
+            `).join('');
+            
+            // Menü listesi modal'ı oluştur
+            const modal = document.createElement('div');
+            modal.className = 'modal active';
+            modal.style.zIndex = '2000';
+            modal.innerHTML = `
+                <div class="modal-content" style="max-width: 800px; max-height: 80vh; overflow-y: auto;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;">
+                        <h2>Menü Listesi</h2>
+                        <button onclick="closeMenuList()" style="background:none;border:none;font-size:1.5rem;cursor:pointer;">&times;</button>
+                    </div>
+                    ${menuListHtml || '<p style="text-align:center;color:#6b7280;">Henüz menü eklenmemiş.</p>'}
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+        
+        function closeMenuList() {
+            document.querySelector('.modal[style*="z-index: 2000"]').remove();
+        }
+        
+        function getCategoryName(category) {
+            const categories = {
+                'kahvalti': 'Kahvaltı',
+                'ana-yemek': 'Ana Yemek',
+                'tatli': 'Tatlı',
+                'icecek': 'İçecek',
+                'fast-food': 'Fast Food'
+            };
+            return categories[category] || category;
+        }
+        
+        function viewMenuDetail(menuIndex) {
+            const menu = menus[menuIndex];
+            const itemsHtml = menu.items && menu.items.length > 0 ? 
+                menu.items.map(item => `
+                    <div style="display:flex;justify-content:space-between;align-items:center;padding:1rem;background:#f9fafb;border-radius:8px;margin-bottom:0.5rem;">
+                        <div>
+                            <h4 style="margin:0;color:#333;">${item.name}</h4>
+                            <p style="margin:0.3rem 0;color:#6b7280;font-size:0.9rem;">${item.description || 'Açıklama yok'}</p>
+                        </div>
+                        <div style="text-align:right;">
+                            <span style="font-weight:600;color:#059669;">₺${item.price}</span>
+                        </div>
+                    </div>
+                `).join('') : '<p style="text-align:center;color:#6b7280;">Bu menüde henüz öğe yok.</p>';
+            
+            document.getElementById('menuDetailTitle').textContent = menu.menuName;
+            document.getElementById('menuDetailContent').innerHTML = `
+                <div style="margin-bottom:2rem;">
+                    <p><strong>Şube:</strong> ${menu.branchName}</p>
+                    <p><strong>Kategori:</strong> ${getCategoryName(menu.category)}</p>
+                    <p><strong>Açıklama:</strong> ${menu.description || 'Açıklama yok'}</p>
+                </div>
+                <div>
+                    <h3>Menü Öğeleri</h3>
+                    ${itemsHtml}
+                </div>
+            `;
+            document.getElementById('menuDetailModal').classList.add('active');
+            currentMenuForItems = menuIndex;
+        }
+        
+        function closeMenuDetailModal() {
+            document.getElementById('menuDetailModal').classList.remove('active');
+            currentMenuForItems = null;
+        }
+        
+        function editMenuFromDetail() {
+            closeMenuDetailModal();
+            if (currentMenuForItems !== null) {
+                editMenu(currentMenuForItems);
+            }
+        }
+        
+        function editMenu(menuIndex) {
+            if (userRole === 'customer') return;
+            const menu = menus[menuIndex];
+            document.getElementById('menuModalTitle').textContent = 'Menü Düzenle';
+            document.getElementById('menuName').value = menu.menuName;
+            document.getElementById('menuCategory').value = menu.category;
+            document.getElementById('menuDescription').value = menu.description || '';
+            document.getElementById('menuModal').classList.add('active');
+            editMenuIndex = menuIndex;
+        }
+        
+        function deleteMenu(menuIndex) {
+            if (userRole !== 'admin') return;
+            if (confirm('Bu menüyü silmek istediğinize emin misiniz?')) {
+                menus.splice(menuIndex, 1);
+                renderAnalytics();
+                alert('Menü silindi.');
+            }
+        }
+        
+        function addMenuItem() {
+            if (currentMenuForItems === null) return;
+            document.getElementById('menuItemModalTitle').textContent = 'Menü Öğesi Ekle';
+            document.getElementById('itemName').value = '';
+            document.getElementById('itemPrice').value = '';
+            document.getElementById('itemDescription').value = '';
+            document.getElementById('itemImage').value = '';
+            document.getElementById('menuItemModal').classList.add('active');
+        }
+
+        function renderBranches() {
+            const list = document.getElementById('branchList');
+            const search = document.getElementById('branchSearch').value.toLowerCase();
+            list.innerHTML = '';
+            branches.filter(b => b.name.toLowerCase().includes(search) || b.location.toLowerCase().includes(search)).forEach((branch, idx) => {
+                const card = document.createElement('div');
+                card.className = 'branch-card';
+                let actions = '';
+                if (userRole === 'admin' || userRole === 'editor') {
+                    actions = `
+                        <button class=\"qr-btn\" onclick=\"showQrModal(${idx})\"><i class='fas fa-qrcode'></i> QR Kod Oluştur</button>
+                        <div class=\"dropdown\">
+                            <button class=\"dropdown-btn\" onclick=\"toggleDropdown(event, ${idx})\">İşlemler <i class='fas fa-chevron-down'></i></button>
+                            <div class=\"dropdown-content\">
+                                <a href=\"#\" onclick=\"openMenuModal();return false;\">Menü Oluştur</a>
+                                <a href=\"#\" onclick=\"alert('Menüleri Kopyala');return false;\">Menüleri Kopyala</a>
+                                <a href=\"#\" onclick=\"closeBranch(${idx});return false;\">Şubeyi Kapat</a>
+                                <a href=\"#\" onclick=\"editBranch(${idx});return false;\">Düzenle</a>
+                                ${userRole === 'admin' ? `<a href=\"#\" onclick=\"deleteBranch(${idx});return false;\">Sil</a>` : ''}
+                            </div>
+                        </div>
+                    `;
+                } else if (userRole === 'customer') {
+                    actions = `<button class=\"qr-btn\" onclick=\"showQrModal(${idx})\"><i class='fas fa-qrcode'></i> QR Kod Oluştur</button>`;
+                }
+                card.innerHTML = `
+                    <div class=\"branch-status\">${branch.status}</div>
+                    <div class=\"branch-title\">${branch.name}</div>
+                    <div class=\"branch-info\">${branch.location}<br>${branch.phone} - ${branch.tables} Masa</div>
+                    <div class=\"branch-info\"><a href=\"${branch.website}\" target=\"_blank\" style=\"color:#059669;text-decoration:underline;\">${branch.website}</a></div>
+                    <div class=\"branch-actions\">${actions}</div>
+                `;
+                list.appendChild(card);
+            });
+            // Sonunda analitik paneli güncelle
+            renderAnalytics();
+        }
+        renderBranches();
+        document.getElementById('branchSearch').addEventListener('input', renderBranches);
+
+        // Şube Ekle Modal
+        document.getElementById('addBranchBtn').onclick = () => {
+            document.getElementById('branchModal').classList.add('active');
+            document.getElementById('branchName').value = '';
+            document.getElementById('branchLocation').value = '';
+            document.getElementById('branchPhone').value = '';
+            document.getElementById('branchTables').value = '';
+            document.getElementById('branchWebsite').value = '';
+            editBranchIndex = null;
+        };
+        document.getElementById('cancelBranchBtn').onclick = () => {
+            document.getElementById('branchModal').classList.remove('active');
+            editBranchIndex = null;
+        };
+        document.getElementById('saveBranchBtn').onclick = () => {
+            const name = document.getElementById('branchName').value.trim();
+            const location = document.getElementById('branchLocation').value.trim();
+            const phone = document.getElementById('branchPhone').value.trim();
+            const tables = document.getElementById('branchTables').value.trim();
+            const website = document.getElementById('branchWebsite').value.trim();
+            if (!name || !location || !phone || !tables || !website) return alert('Tüm alanları doldurun!');
+            if (editBranchIndex === null) {
+                // Yeni şube ekle
+                branches.push({ name, location, phone, tables, status: 'Açık', website });
+            } else {
+                // Düzenle
+                branches[editBranchIndex] = { ...branches[editBranchIndex], name, location, phone, tables, website };
+            }
+            document.getElementById('branchModal').classList.remove('active');
+            editBranchIndex = null;
+            renderBranches();
+        };
+
+        // Dropdown işlemleri
+        window.toggleDropdown = (e, idx) => {
+            e.stopPropagation();
+            document.querySelectorAll('.dropdown').forEach((el, i) => {
+                if (i === idx) el.classList.toggle('open');
+                else el.classList.remove('open');
+            });
+        };
+        document.body.addEventListener('click', () => {
+            document.querySelectorAll('.dropdown').forEach(el => el.classList.remove('open'));
+        });
+
+        // Şube işlemleri
+        window.closeBranch = idx => {
+            branches[idx].status = 'Kapalı';
+            renderBranches();
+        };
+        window.editBranch = idx => {
+            if (userRole === 'customer') return;
+            const b = branches[idx];
+            document.getElementById('branchName').value = b.name;
+            document.getElementById('branchLocation').value = b.location;
+            document.getElementById('branchPhone').value = b.phone;
+            document.getElementById('branchTables').value = b.tables;
+            document.getElementById('branchWebsite').value = b.website;
+            document.getElementById('branchModal').classList.add('active');
+            editBranchIndex = idx;
+        };
+        window.deleteBranch = idx => {
+            if (userRole !== 'admin') return;
+            if (confirm('Şubeyi silmek istediğinize emin misiniz?')) {
+                branches.splice(idx, 1);
+                renderBranches();
+            }
+        };
+
+        // QR Kod Modal
+        window.showQrModal = idx => {
+            const branch = branches[idx];
+            document.getElementById('qrModal').classList.add('active');
+            document.getElementById('qrBranchName').textContent = branch.name;
+            document.getElementById('qrBranchWebsite').innerHTML = `<a href="${branch.website}" target="_blank">${branch.website}</a>`;
+            document.getElementById('qrImage').src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(branch.website)}`;
+        };
+        window.closeQrModal = () => {
+            document.getElementById('qrModal').classList.remove('active');
+        };
+
+        // Menü Oluştur Modal
+        window.openMenuModal = () => {
+            if (userRole === 'customer') return;
+            document.getElementById('menuModalTitle').textContent = 'Menü Oluştur';
+            document.getElementById('menuName').value = '';
+            document.getElementById('menuCategory').value = 'kahvalti';
+            document.getElementById('menuDescription').value = '';
+            document.getElementById('menuModal').classList.add('active');
+            editMenuIndex = null;
+        };
+        document.getElementById('cancelMenuBtn').onclick = () => {
+            document.getElementById('menuModal').classList.remove('active');
+            document.getElementById('menuName').value = '';
+            document.getElementById('menuCategory').value = 'kahvalti';
+            document.getElementById('menuDescription').value = '';
+            editMenuIndex = null;
+        };
+        document.getElementById('saveMenuBtn').onclick = () => {
+            const menuName = document.getElementById('menuName').value.trim();
+            const category = document.getElementById('menuCategory').value;
+            const description = document.getElementById('menuDescription').value.trim();
+            if (!menuName) return alert('Menü adı girin!');
+            
+            // Aktif şube bul
+            let branchName = branches[branches.length-1]?.name || '';
+            if (editBranchIndex !== null) branchName = branches[editBranchIndex].name;
+            
+            if (editMenuIndex === null) {
+                // Yeni menü ekle
+                menus.push({ 
+                    id: Date.now(), 
+                    branchName, 
+                    menuName, 
+                    category, 
+                    description, 
+                    items: [] 
+                });
+            } else {
+                // Düzenle
+                menus[editMenuIndex] = { 
+                    ...menus[editMenuIndex], 
+                    menuName, 
+                    category, 
+                    description 
+                };
+            }
+            
+            document.getElementById('menuModal').classList.remove('active');
+            editMenuIndex = null;
+            renderAnalytics();
+            alert(editMenuIndex === null ? 'Menü oluşturuldu!' : 'Menü güncellendi!');
+        };
+        
+        // Menü öğesi modal işlemleri
+        document.getElementById('cancelItemBtn').onclick = () => {
+            document.getElementById('menuItemModal').classList.remove('active');
+        };
+        
+        document.getElementById('saveItemBtn').onclick = () => {
+            const name = document.getElementById('itemName').value.trim();
+            const price = parseFloat(document.getElementById('itemPrice').value);
+            const description = document.getElementById('itemDescription').value.trim();
+            const image = document.getElementById('itemImage').value.trim();
+            
+            if (!name || isNaN(price) || price < 0) return alert('Geçerli öğe adı ve fiyat girin!');
+            
+            if (currentMenuForItems !== null) {
+                if (!menus[currentMenuForItems].items) menus[currentMenuForItems].items = [];
+                menus[currentMenuForItems].items.push({ name, price, description, image });
+                document.getElementById('menuItemModal').classList.remove('active');
+                alert('Menü öğesi eklendi!');
+            }
+        };
+        
+        // Menü listesi butonunu ekle
+        window.showMenuList = showMenuList;
+
+        // Logout
+        window.logout = () => {
+            localStorage.removeItem('userRole');
+            localStorage.removeItem('username');
+            window.location.href = 'index.html';
+        };
+    </script>
+</body>
+</html> 

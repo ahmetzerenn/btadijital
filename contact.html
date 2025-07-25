@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>İletişim - BTA Dijital</title>
+    <link rel="stylesheet" href="styles.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="btadijital.jpg" as="image">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html"><img src="btadijital.jpg" alt="BTA Dijital Logo" style="height: 68px; border-radius: 14px; box-shadow: 0 2px 8px rgba(5,150,105,0.08); background: #fff; padding: 2px;"></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">Hakkımızda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Hizmetler</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="influencer.html" class="nav-link">Influencer Marketing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link active">İletişim</a>
+                </li>
+                <li class="nav-item nav-login-theme">
+                    <button class="nav-link login-btn" onclick="openLoginModal()"><i class="fas fa-user"></i> Giriş Yap</button>
+                    <button id="themeToggleBtn" class="nav-link" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; margin-left: 8px;" onclick="toggleTheme()" title="Gece/Gündüz Modu">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Giriş Yap</h2>
+            <form id="loginForm">
+                <input type="text" placeholder="Kullanıcı Adı" required>
+                <input type="password" placeholder="Şifre" required>
+                <button type="submit" class="btn btn-primary">Giriş Yap</button>
+            </form>
+            <div class="demo-credentials">
+                <p><strong>Demo Kullanıcılar:</strong></p>
+                <p>Admin: admin / admin123</p>
+                <p>Editor: editor / editor123</p>
+                <p>Customer: customer / customer123</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>İletişim</h1>
+                <p>Projeleriniz için bizimle iletişime geçin. Size en uygun dijital pazarlama çözümlerini sunalım.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Bizimle İletişime Geçin</h2>
+                    <p>Dijital pazarlama hedeflerinizi gerçekleştirmek için uzman ekibimizle görüşün. Size özel stratejiler geliştirelim.</p>
+                    
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Telefon</h3>
+                                <p>+90 555 123 45 67</p>
+                                <p>Pazartesi - Cuma: 09:00 - 18:00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>E-posta</h3>
+                                <p>info@btadijital.com</p>
+                                <p>24 saat içinde yanıt veriyoruz</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Adres</h3>
+                                <p>İstanbul, Türkiye</p>
+                                <p>Merkez ofisimiz</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-contact">
+                        <h3>Sosyal Medyada Takip Edin</h3>
+                        <div class="social-links-large">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <div class="form-header">
+                        <h2>Mesaj Gönderin</h2>
+                        <p>Projeniz hakkında bilgi verin, size en uygun çözümü sunalım.</p>
+                    </div>
+                    
+                    <form class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Ad Soyad *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-posta *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Telefon</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Şirket</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">İlgilendiğiniz Hizmet</label>
+                            <select id="service" name="service">
+                                <option value="">Seçiniz</option>
+                                <option value="seo">SEO Optimizasyonu</option>
+                                <option value="google-ads">Google Ads</option>
+                                <option value="social-media">Sosyal Medya Yönetimi</option>
+                                <option value="web-design">Web Tasarım</option>
+                                <option value="influencer">Influencer Marketing</option>
+                                <option value="content">İçerik Pazarlaması</option>
+                                <option value="analytics">Analitik ve Raporlama</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mesajınız *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Projeniz hakkında detaylı bilgi verin..."></textarea>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" required>
+                                <span>Kişisel verilerimin işlenmesini kabul ediyorum</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">
+                            <i class="fas fa-paper-plane"></i> Mesaj Gönder
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Sık Sorulan Sorular</h2>
+                <p>En çok merak edilen soruların cevaplarını bulun</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Hangi hizmetleriniz mevcut?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>SEO optimizasyonu, Google Ads yönetimi, sosyal medya yönetimi, web tasarım, influencer marketing, içerik pazarlaması ve analitik raporlama hizmetlerimiz bulunmaktadır.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Proje süreleri ne kadar?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Proje süreleri hizmet türüne ve kapsamına göre değişmektedir. SEO projeleri 3-6 ay, web tasarım projeleri 2-4 hafta, sosyal medya yönetimi sürekli hizmet olarak sunulmaktadır.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Fiyatlandırma nasıl yapılıyor?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Fiyatlandırma projenin kapsamına, süresine ve hedeflerinize göre belirlenmektedir. Ücretsiz danışmanlık için bizimle iletişime geçebilirsiniz.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Hangi sektörlerde çalışıyorsunuz?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>E-ticaret, sağlık, eğitim, finans, turizm, teknoloji ve daha birçok sektörde deneyimimiz bulunmaktadır. Her sektöre özel stratejiler geliştiriyoruz.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Sonuçları ne zaman görebilirim?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Google Ads kampanyalarında anında sonuç alabilirsiniz. SEO sonuçları 3-6 ay içinde görülmeye başlar. Sosyal medya etkileşimleri ise ilk ay içinde artış gösterecektir.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Raporlama nasıl yapılıyor?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Aylık detaylı raporlar sunuyoruz. Google Analytics, Google Ads, sosyal medya platformları ve diğer araçlardan elde ettiğimiz verileri analiz ederek size kapsamlı raporlar hazırlıyoruz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="map-content">
+                <h2>Ofisimizi Ziyaret Edin</h2>
+                <p>İstanbul'daki ofisimizde sizi ağırlamaktan mutluluk duyarız.</p>
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p style="margin-top: 1rem; color: #6b7280;">Harita burada görüntülenecek</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BTA Dijital</h3>
+                    <p>Dijital pazarlama dünyasında markanızı öne çıkarıyoruz. Profesyonel ekibimizle hedeflerinize ulaşmanızı sağlıyoruz.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Hizmetlerimiz</h4>
+                    <ul>
+                        <li><a href="services.html#seo">SEO Optimizasyonu</a></li>
+                        <li><a href="services.html#google-ads">Google Ads</a></li>
+                        <li><a href="services.html#social-media">Sosyal Medya</a></li>
+                        <li><a href="services.html#web-design">Web Tasarım</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Şirket</h4>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="influencer.html">Influencer Marketing</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>İletişim</h4>
+                    <p>Email: info@btadijital.com</p>
+                    <p>Tel: +90 555 123 45 67</p>
+                    <p>Adres: İstanbul, Türkiye</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BTA Dijital. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sabit Teklif Al Butonu ve Popup Form -->
+    <button class="fixed-cta" id="openQuoteBtn"><i class="fas fa-comments"></i> Teklif Al</button>
+    <div class="modal" id="quoteModal">
+        <div class="modal-content">
+            <h2>Hızlı Teklif Al</h2>
+            <form id="quoteForm">
+                <input type="text" name="name" placeholder="Adınız Soyadınız" required>
+                <input type="email" name="email" placeholder="E-posta Adresiniz" required>
+                <input type="tel" name="phone" placeholder="Telefon Numaranız">
+                <input type="text" name="company" placeholder="Şirket Adı">
+                <textarea name="project" placeholder="Kısaca projenizi anlatın..." rows="3" required></textarea>
+                <button type="submit" class="btn btn-primary">Teklif İste</button>
+                <button type="button" class="btn btn-secondary" id="closeQuoteBtn">İptal</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.min.js"></script>
+</body>
+</html> 

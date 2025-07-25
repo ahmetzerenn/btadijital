@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Influencer Marketing - BTA Dijital</title>
+    <link rel="stylesheet" href="styles.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="btadijital.jpg" as="image">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html"><img src="btadijital.jpg" alt="BTA Dijital Logo" style="height: 68px; border-radius: 14px; box-shadow: 0 2px 8px rgba(5,150,105,0.08); background: #fff; padding: 2px;"></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">Hakkımızda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Hizmetler</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="influencer.html" class="nav-link active">Influencer Marketing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">İletişim</a>
+                </li>
+                <li class="nav-item nav-login-theme">
+                    <button class="nav-link login-btn" onclick="openLoginModal()"><i class="fas fa-user"></i> Giriş Yap</button>
+                    <button id="themeToggleBtn" class="nav-link" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; margin-left: 8px;" onclick="toggleTheme()" title="Gece/Gündüz Modu">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Giriş Yap</h2>
+            <form id="loginForm">
+                <input type="text" placeholder="Kullanıcı Adı" required>
+                <input type="password" placeholder="Şifre" required>
+                <button type="submit" class="btn btn-primary">Giriş Yap</button>
+            </form>
+            <div class="demo-credentials">
+                <p><strong>Demo Kullanıcılar:</strong></p>
+                <p>Admin: admin / admin123</p>
+                <p>Editor: editor / editor123</p>
+                <p>Customer: customer / customer123</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Influencer Marketing</h1>
+                <p>Doğru influencer'lar ile markanızı güçlendirin ve hedef kitlenize ulaşın</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Influencer Marketing -->
+    <section class="why-influencer">
+        <div class="container">
+            <div class="section-header">
+                <h2>Neden Influencer Marketing?</h2>
+                <p>Geleneksel reklamcılığın ötesinde, güvenilir ve etkili pazarlama çözümü</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Güvenilir Tavsiye</h3>
+                    <p>Influencer'ların takipçileri tarafından güvenilir kaynak olarak görülmesi, markanıza olan güveni artırır.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Hedefli Erişim</h3>
+                    <p>Doğru influencer seçimi ile hedef kitlenize doğrudan ulaşabilir ve etkileşimi maksimize edebilirsiniz.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Yüksek ROI</h3>
+                    <p>Geleneksel reklamlara göre daha yüksek dönüşüm oranları ve maliyet etkinliği sağlar.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-viral"></i>
+                    </div>
+                    <h3>Viral Potansiyel</h3>
+                    <p>İçeriklerin viral olma potansiyeli ile organik olarak daha geniş kitlelere ulaşabilirsiniz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="influencer-process">
+        <div class="container">
+            <div class="section-header">
+                <h2>Influencer Marketing Sürecimiz</h2>
+                <p>Başarılı influencer kampanyaları için 5 adımlı sürecimiz</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Strateji Geliştirme</h3>
+                        <p>Markanızın hedeflerini, hedef kitlenizi ve bütçenizi analiz ederek en uygun influencer marketing stratejisini geliştiriyoruz.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Influencer Seçimi</h3>
+                        <p>Markanızla uyumlu, hedef kitlenize uygun ve güvenilir influencer'ları tespit ediyoruz.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>İçerik Planlama</h3>
+                        <p>Influencer'lar ile birlikte markanızı en iyi şekilde yansıtacak içerik stratejisini planlıyoruz.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Kampanya Yönetimi</h3>
+                        <p>Kampanya süresince influencer'lar ile sürekli iletişim halinde kalarak süreci yönetiyoruz.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Performans Analizi</h3>
+                        <p>Kampanya sonuçlarını detaylı olarak analiz ediyor ve gelecek kampanyalar için öneriler sunuyoruz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Influencer Types -->
+    <section class="influencer-types">
+        <div class="container">
+            <div class="section-header">
+                <h2>Influencer Türleri</h2>
+                <p>Farklı hedefler için farklı influencer türleri</p>
+            </div>
+            <div class="types-grid">
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Mega Influencer</h3>
+                    <p class="type-description">1M+ takipçi</p>
+                    <ul>
+                        <li>Geniş erişim</li>
+                        <li>Yüksek maliyet</li>
+                        <li>Marka bilinirliği</li>
+                        <li>Düşük etkileşim oranı</li>
+                    </ul>
+                    <div class="type-best-for">
+                        <strong>En İyi:</strong> Marka bilinirliği ve geniş erişim
+                    </div>
+                </div>
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Makro Influencer</h3>
+                    <p class="type-description">100K - 1M takipçi</p>
+                    <ul>
+                        <li>Dengeli erişim</li>
+                        <li>Orta maliyet</li>
+                        <li>İyi etkileşim</li>
+                        <li>Profesyonel içerik</li>
+                    </ul>
+                    <div class="type-best-for">
+                        <strong>En İyi:</strong> Genel pazarlama kampanyaları
+                    </div>
+                </div>
+                <div class="type-card featured">
+                    <div class="type-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Mikro Influencer</h3>
+                    <p class="type-description">10K - 100K takipçi</p>
+                    <ul>
+                        <li>Yüksek etkileşim</li>
+                        <li>Düşük maliyet</li>
+                        <li>Güvenilir tavsiye</li>
+                        <li>Hedefli kitle</li>
+                    </ul>
+                    <div class="type-best-for">
+                        <strong>En İyi:</strong> Dönüşüm ve satış
+                    </div>
+                </div>
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Nano Influencer</h3>
+                    <p class="type-description">1K - 10K takipçi</p>
+                    <ul>
+                        <li>En yüksek etkileşim</li>
+                        <li>Çok düşük maliyet</li>
+                        <li>Otantik içerik</li>
+                        <li>Yerel etki</li>
+                    </ul>
+                    <div class="type-best-for">
+                        <strong>En İyi:</strong> Yerel pazarlama ve niş kitleler
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="success-stories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Başarı Hikayelerimiz</h2>
+                <p>Influencer marketing ile elde ettiğimiz başarılı sonuçlar</p>
+            </div>
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-image">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="story-content">
+                        <h3>Moda Markası Kampanyası</h3>
+                        <p>5 mikro influencer ile 3 aylık kampanya sonucunda %400 satış artışı elde ettik.</p>
+                        <div class="story-stats">
+                            <div class="stat">
+                                <span class="stat-number">%400</span>
+                                <span class="stat-label">Satış Artışı</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">2.5M</span>
+                                <span class="stat-label">Görüntülenme</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">%8.5</span>
+                                <span class="stat-label">Etkileşim Oranı</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="story-image">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="story-content">
+                        <h3>Restoran Zinciri Kampanyası</h3>
+                        <p>Yerel influencer'lar ile gerçekleştirdiğimiz kampanya ile %300 rezervasyon artışı sağladık.</p>
+                        <div class="story-stats">
+                            <div class="stat">
+                                <span class="stat-number">%300</span>
+                                <span class="stat-label">Rezervasyon Artışı</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">500K</span>
+                                <span class="stat-label">Görüntülenme</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">%12</span>
+                                <span class="stat-label">Etkileşim Oranı</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="story-image">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <div class="story-content">
+                        <h3>Teknoloji Ürünü Kampanyası</h3>
+                        <p>Teknoloji influencer'ları ile gerçekleştirdiğimiz kampanya ile %250 satış artışı elde ettik.</p>
+                        <div class="story-stats">
+                            <div class="stat">
+                                <span class="stat-number">%250</span>
+                                <span class="stat-label">Satış Artışı</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">1.8M</span>
+                                <span class="stat-label">Görüntülenme</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">%6.2</span>
+                                <span class="stat-label">Etkileşim Oranı</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Paketlerimiz</h2>
+                <p>İhtiyaçlarınıza uygun influencer marketing paketleri</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Başlangıç</h3>
+                        <div class="price">₺5,000<span>/ay</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 3 Mikro Influencer</li>
+                        <li><i class="fas fa-check"></i> 1 Ay Kampanya</li>
+                        <li><i class="fas fa-check"></i> İçerik Planlama</li>
+                        <li><i class="fas fa-check"></i> Temel Raporlama</li>
+                        <li><i class="fas fa-check"></i> E-posta Desteği</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Başla</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <h3>Profesyonel</h3>
+                        <div class="price">₺12,000<span>/ay</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 8 Mikro/Makro Influencer</li>
+                        <li><i class="fas fa-check"></i> 3 Ay Kampanya</li>
+                        <li><i class="fas fa-check"></i> Detaylı İçerik Stratejisi</li>
+                        <li><i class="fas fa-check"></i> Haftalık Raporlama</li>
+                        <li><i class="fas fa-check"></i> 7/24 Telefon Desteği</li>
+                        <li><i class="fas fa-check"></i> A/B Testleri</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Başla</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Kurumsal</h3>
+                        <div class="price">₺25,000<span>/ay</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 15+ Influencer</li>
+                        <li><i class="fas fa-check"></i> 6 Ay Kampanya</li>
+                        <li><i class="fas fa-check"></i> Özel İçerik Stratejisi</li>
+                        <li><i class="fas fa-check"></i> Günlük Raporlama</li>
+                        <li><i class="fas fa-check"></i> Özel Hesap Yöneticisi</li>
+                        <li><i class="fas fa-check"></i> Kriz Yönetimi</li>
+                        <li><i class="fas fa-check"></i> ROI Analizi</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Başla</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Influencer Marketing ile Markanızı Büyütün</h2>
+                <p>Uzman ekibimizle görüşün ve size en uygun influencer marketing stratejisini belirleyelim</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Ücretsiz Danışmanlık Alın</a>
+                    <a href="contact.html" class="btn btn-secondary">Fiyat Teklifi İsteyin</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BTA Dijital</h3>
+                    <p>Dijital pazarlama alanında uzmanlaşmış ekibimiz ile işletmenizi dijital dünyada öne çıkarıyoruz.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Hizmetler</h4>
+                    <ul>
+                        <li><a href="services.html#seo">SEO Optimizasyonu</a></li>
+                        <li><a href="services.html#google-ads">Google Ads</a></li>
+                        <li><a href="influencer.html">Influencer Marketing</a></li>
+                        <li><a href="services.html#web-design">Web Tasarım</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Şirket</h4>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                        <li><a href="influencer.html">Influencer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>İletişim</h4>
+                    <p><i class="fas fa-phone"></i> +90 (212) 555 0123</p>
+                    <p><i class="fas fa-envelope"></i> info@btadijital.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BTA Dijital. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed CTA Button -->
+    <a href="contact.html" class="fixed-cta">
+        <i class="fas fa-comments"></i>
+        <span>Teklif Al</span>
+    </a>
+
+    <!-- Sabit Teklif Al Butonu ve Popup Form -->
+    <button class="fixed-cta" id="openQuoteBtn"><i class="fas fa-comments"></i> Teklif Al</button>
+    <div class="modal" id="quoteModal">
+        <div class="modal-content">
+            <h2>Hızlı Teklif Al</h2>
+            <form id="quoteForm">
+                <input type="text" name="name" placeholder="Adınız Soyadınız" required>
+                <input type="email" name="email" placeholder="E-posta Adresiniz" required>
+                <input type="tel" name="phone" placeholder="Telefon Numaranız">
+                <input type="text" name="company" placeholder="Şirket Adı">
+                <textarea name="project" placeholder="Kısaca projenizi anlatın..." rows="3" required></textarea>
+                <button type="submit" class="btn btn-primary">Teklif İste</button>
+                <button type="button" class="btn btn-secondary" id="closeQuoteBtn">İptal</button>
+            </form>
+        </div>
+    </div>
+    <script>
+    // Teklif Al Popup
+    document.addEventListener('DOMContentLoaded', function() {
+        var openBtn = document.getElementById('openQuoteBtn');
+        var modal = document.getElementById('quoteModal');
+        var closeBtn = document.getElementById('closeQuoteBtn');
+        if(openBtn && modal && closeBtn) {
+            openBtn.onclick = function() { modal.classList.add('active'); };
+            closeBtn.onclick = function() { modal.classList.remove('active'); };
+            window.onclick = function(e) { if(e.target === modal) modal.classList.remove('active'); };
+        }
+        // Back to Top Button
+        const backToTopBtn = document.createElement('button');
+        backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        backToTopBtn.className = 'back-to-top';
+        document.body.appendChild(backToTopBtn);
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+    </script>
+    <script src="script.min.js"></script>
+</body>
+</html> 
