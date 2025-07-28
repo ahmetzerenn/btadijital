@@ -65,10 +65,15 @@
     <link rel="stylesheet" href="styles.min.css">
     
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- Font Display Swap Fallback -->
+    <style>
+        body { font-display: swap; }
+    </style>
 </head>
 <body>
     <div class="mobile-menu-overlay" id="mobileMenuOverlay" aria-hidden="true"></div>
@@ -97,8 +102,8 @@
                 </p>
             </div>
             <div style="display: flex; gap: 0.5rem;">
-                <button onclick="acceptCookies()" style="background: #10b981; color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; font-size: 0.9rem; min-width: 80px; min-height: 44px;">Kabul Et</button>
-                <button onclick="declineCookies()" style="background: transparent; color: white; border: 1px solid white; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; font-size: 0.9rem; min-width: 80px; min-height: 44px;">Reddet</button>
+                <button onclick="acceptCookies()" style="background: #047857; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; font-size: 1rem; min-width: 100px; min-height: 48px; font-weight: 600;">Kabul Et</button>
+                <button onclick="declineCookies()" style="background: #dc2626; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; font-size: 1rem; min-width: 100px; min-height: 48px; font-weight: 600;">Reddet</button>
             </div>
         </div>
     </div>
@@ -433,7 +438,7 @@
     </div>
 
     <!-- Sabit Teklif Al Butonu ve Popup Form -->
-    <button class="fixed-cta" id="openQuoteBtn"><i class="fas fa-comments"></i> Teklif Al</button>
+    <button class="fixed-cta" id="openQuoteBtn" aria-label="Teklif almak için tıklayın"><i class="fas fa-comments" aria-hidden="true"></i> Teklif Al</button>
     <div class="modal" id="quoteModal">
         <div class="modal-content">
             <h2>Hızlı Teklif Al</h2>
@@ -632,10 +637,10 @@
                     <h3>BTA Dijital</h3>
                     <p>Dijital pazarlama alanında uzmanlaşmış ekibimiz ile işletmenizi dijital dünyada öne çıkarıyoruz.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Facebook sayfamızı ziyaret edin"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Twitter sayfamızı ziyaret edin"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Instagram sayfamızı ziyaret edin"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="LinkedIn sayfamızı ziyaret edin"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">

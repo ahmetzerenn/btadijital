@@ -179,6 +179,34 @@ body {
     box-shadow: 0 10px 25px rgba(251,191,36,0.3); 
 }
 
+/* Fixed CTA Button */
+.fixed-cta {
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    z-index: 1001;
+    background: #047857;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 4px 16px rgba(4,120,87,0.3);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    transition: background 0.2s, box-shadow 0.2s;
+    min-width: 120px;
+    min-height: 56px;
+}
+
+.fixed-cta:hover {
+    background: #065f46;
+    box-shadow: 0 8px 32px rgba(4,120,87,0.4);
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) { 
     .hero h1 { 
@@ -210,5 +238,13 @@ body {
     }
     .nav-menu.active { 
         left: 0; 
+    }
+    .fixed-cta {
+        right: 16px;
+        bottom: 16px;
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        min-width: 100px;
+        min-height: 48px;
     }
 } 
