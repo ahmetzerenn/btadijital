@@ -1,4 +1,4 @@
-const CACHE_NAME = 'btadijital-v1.1';
+const CACHE_NAME = 'btadijital-v1.0';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -36,29 +36,7 @@ self.addEventListener('fetch', event => {
     caches.match(event.request)
       .then(response => {
         // Return cached version or fetch from network
-        if (response) {
-          return response;
-        }
-        
-        // Clone the request
-        const fetchRequest = event.request.clone();
-        
-        return fetch(fetchRequest).then(response => {
-          // Check if we received a valid response
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
-          }
-          
-          // Clone the response
-          const responseToCache = response.clone();
-          
-          caches.open(CACHE_NAME)
-            .then(cache => {
-              cache.put(event.request, responseToCache);
-            });
-          
-          return response;
-        });
+        return response || fetch(event.request);
       }
     )
   );

@@ -59,12 +59,10 @@
     </script>
     
     <!-- Critical CSS -->
-    <link rel="stylesheet" href="critical.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="critical.css"></noscript>
+    <link rel="stylesheet" href="critical.css">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="styles.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="styles.min.css"></noscript>
+    <link rel="stylesheet" href="styles.min.css">
     
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
@@ -83,7 +81,7 @@
     <div class="preloader" id="preloader">
         <picture>
             <source srcset="btadijital.webp" type="image/webp">
-            <img src="btadijital.jpg" alt="BTA Dijital Logo" style="width: 90px; height: 90px; object-fit: contain; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.10); background: #fff; padding: 8px; display: block; margin: 0 auto 16px auto;" loading="eager" />
+            <img src="btadijital.jpg" alt="BTA Dijital Logo" style="width: 90px; height: 90px; object-fit: contain; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.10); background: #fff; padding: 8px; display: block; margin: 0 auto 16px auto;" />
         </picture>
         <div class="preloader-progress-bar-bg">
             <div class="preloader-progress-bar" id="preloaderProgressBar"></div>
@@ -117,7 +115,7 @@
                 <a href="index.html">
                     <picture>
                         <source srcset="btadijital.webp" type="image/webp">
-                        <img src="btadijital.jpg" alt="BTA Dijital Logo" style="height: 68px; border-radius: 14px; box-shadow: 0 2px 8px rgba(5,150,105,0.08); background: #fff; padding: 2px;" loading="eager">
+                        <img src="btadijital.jpg" alt="BTA Dijital Logo" style="height: 68px; border-radius: 14px; box-shadow: 0 2px 8px rgba(5,150,105,0.08); background: #fff; padding: 2px;">
                     </picture>
                 </a>
             </div>
@@ -457,23 +455,8 @@
     </div>
 
     
-    <!-- Service Worker Registration -->
-    <script>
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/sw.js')
-                .then(registration => {
-                    console.log('SW registered: ', registration);
-                })
-                .catch(registrationError => {
-                    console.log('SW registration failed: ', registrationError);
-                });
-        });
-    }
-    </script>
-    
     <!-- JavaScript -->
-    <script src="script.min.js" defer></script>
+    <script src="script.min.js"></script>
     <script>
     // Giriş sistemi
     function openLoginModal() {
