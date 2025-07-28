@@ -11,24 +11,24 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://btadijital.com/">
+    <meta property="og:url" content="https://ahmetzerenn.github.io/btadijital/">
     <meta property="og:title" content="BTA Dijital - Dijital Pazarlama Ajansı">
     <meta property="og:description" content="Dijital pazarlama alanında uzmanlaşmış ekibimiz ile işletmenizi dijital dünyada öne çıkarıyoruz.">
-    <meta property="og:image" content="https://btadijital.com/images/og-image.jpg">
+    <meta property="og:image" content="https://ahmetzerenn.github.io/btadijital/btadijital.jpg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://btadijital.com/">
+    <meta property="twitter:url" content="https://ahmetzerenn.github.io/btadijital/">
     <meta property="twitter:title" content="BTA Dijital - Dijital Pazarlama Ajansı">
     <meta property="twitter:description" content="Dijital pazarlama alanında uzmanlaşmış ekibimiz ile işletmenizi dijital dünyada öne çıkarıyoruz.">
-    <meta property="twitter:image" content="https://btadijital.com/images/og-image.jpg">
+    <meta property="twitter:image" content="https://ahmetzerenn.github.io/btadijital/btadijital.jpg">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://btadijital.com/">
+    <link rel="canonical" href="https://ahmetzerenn.github.io/btadijital/">
     
     <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
@@ -36,8 +36,8 @@
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "BTA Dijital",
-        "url": "https://btadijital.com",
-        "logo": "https://btadijital.com/images/logo.png",
+        "url": "https://ahmetzerenn.github.io/btadijital",
+        "logo": "https://ahmetzerenn.github.io/btadijital/btadijital.jpg",
         "description": "Dijital pazarlama alanında uzmanlaşmış ekibimiz ile işletmenizi dijital dünyada öne çıkarıyoruz.",
         "address": {
             "@type": "PostalAddress",
@@ -58,66 +58,55 @@
         ]
     }
     </script>
-    <link rel="stylesheet" href="styles.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
-    <link rel="preload" href="btadijital.jpg" as="image">
     
-    <!-- Preloader -->
+    <!-- Critical CSS Inline -->
     <style>
-        .preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #059669;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-        
-        .preloader.fade-out {
-            opacity: 0;
-            pointer-events: none;
-        }
-        
-        .loader {
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(255,255,255,0.3);
-            border-top: 3px solid white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* Scroll Progress Bar */
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 3px;
-            background: linear-gradient(90deg, #059669, #10b981);
-            z-index: 1001;
-            transition: width 0.1s ease;
-        }
-        
-        /* Back to top button enhancement */
+        /* Critical CSS for above-the-fold content */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #1f2937; background: #f9fafb; }
+        .preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #059669; display: flex; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.5s ease; }
+        .preloader.fade-out { opacity: 0; pointer-events: none; }
+        .loader { width: 50px; height: 50px; border: 3px solid rgba(255,255,255,0.3); border-top: 3px solid white; border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .header { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 0; transition: all 0.3s ease; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 68px; border-radius: 14px; box-shadow: 0 2px 8px rgba(5,150,105,0.08); background: #fff; padding: 2px; }
+        .hero { min-height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; position: relative; overflow: hidden; }
+        .hero-content { max-width: 1200px; margin: 0 auto; padding: 0 2rem; text-align: center; z-index: 2; position: relative; }
+        .hero h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; }
+        .hero p { font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .cta-button { display: inline-block; background: #fbbf24; color: #1f2937; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(251,191,36,0.3); }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(251,191,36,0.4); }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .hero p { font-size: 1.1rem; } }
     </style>
+    
+    <!-- Non-critical CSS -->
+    <link rel="stylesheet" href="styles.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="styles.min.css"></noscript>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="btadijital.webp" as="image">
+    
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
     <!-- Preloader -->
     <div class="preloader" id="preloader">
-        <img src="btadijital.jpg" alt="BTA Dijital Logo" style="width: 90px; height: 90px; object-fit: contain; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.10); background: #fff; padding: 8px; display: block; margin: 0 auto 16px auto;" />
+        <picture>
+            <source srcset="btadijital.webp" type="image/webp">
+            <img src="btadijital.jpg" alt="BTA Dijital Logo" style="width: 90px; height: 90px; object-fit: contain; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.10); background: #fff; padding: 8px; display: block; margin: 0 auto 16px auto;" />
+        </picture>
         <div class="preloader-progress-bar-bg">
             <div class="preloader-progress-bar" id="preloaderProgressBar"></div>
         </div>
@@ -146,7 +135,12 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="index.html"><img src="btadijital.jpg" alt="BTA Dijital Logo" style="height: 68px; border-radius: 14px; box-shadow: 0 2px 8px rgba(5,150,105,0.08); background: #fff; padding: 2px;"></a>
+                <a href="index.html">
+                    <picture>
+                        <source srcset="btadijital.webp" type="image/webp">
+                        <img src="btadijital.jpg" alt="BTA Dijital Logo" style="height: 68px; border-radius: 14px; box-shadow: 0 2px 8px rgba(5,150,105,0.08); background: #fff; padding: 2px;">
+                    </picture>
+                </a>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
@@ -482,7 +476,23 @@
             </form>
         </div>
     </div>
-    <script src="script.min.js"></script>
+    <!-- Service Worker Registration -->
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+                .then(registration => {
+                    console.log('SW registered: ', registration);
+                })
+                .catch(registrationError => {
+                    console.log('SW registration failed: ', registrationError);
+                });
+        });
+    }
+    </script>
+    
+    <!-- Optimized JavaScript loading -->
+    <script src="script.min.js" defer></script>
     <script>
     // Giriş sistemi
     function openLoginModal() {
