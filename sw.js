@@ -1,9 +1,10 @@
-const CACHE_NAME = 'btadijital-v1.0';
+const CACHE_NAME = 'btadijital-v1.1';
 const urlsToCache = [
   '/',
   '/index.html',
   '/styles.min.css',
   '/script.min.js',
+  '/critical.css',
   '/btadijital.webp',
   '/btadijital.jpg',
   '/about.html',
@@ -16,7 +17,10 @@ const urlsToCache = [
   '/404.html',
   '/instagram-logo.svg',
   '/tiktok-logo.svg',
-  '/facebook-logo.svg'
+  '/facebook-logo.svg',
+  '/manifest.json',
+  '/sitemap.xml',
+  '/robots.txt'
 ];
 
 // Install event

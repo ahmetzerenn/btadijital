@@ -1,0 +1,62 @@
+{
+    "name": "BTA Dijital - Dijital Pazarlama Ajansı",
+    "short_name": "BTA Dijital",
+    "description": "İstanbul'da profesyonel dijital pazarlama ajansı. SEO, Google Ads, Influencer Marketing ve web tasarım hizmetleri.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#059669",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "tr",
+    "dir": "ltr",
+    "categories": ["business", "marketing", "advertising"],
+    "icons": [
+        {
+            "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "btadijital.jpg",
+            "sizes": "1280x720",
+            "type": "image/jpeg",
+            "form_factor": "wide"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Hizmetlerimiz",
+            "short_name": "Hizmetler",
+            "description": "BTA Dijital hizmetlerini görüntüle",
+            "url": "/services.html",
+            "icons": [
+                {
+                    "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "İletişim",
+            "short_name": "İletişim",
+            "description": "BTA Dijital ile iletişime geç",
+            "url": "/contact.html",
+            "icons": [
+                {
+                    "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>",
+                    "sizes": "96x96"
+                }
+            ]
+        }
+    ]
+} 

@@ -10,6 +10,15 @@ Modern ve profesyonel dijital pazarlama ajansı websitesi. Responsive tasarım, 
 - Fonksiyonel iletişim formu
 - SEO optimizasyonu
 - Hızlı yükleme (minify edilmiş dosyalar)
+- PWA (Progressive Web App) desteği
+- Service Worker ile offline çalışma
+- Schema.org markup
+- Open Graph ve Twitter Card desteği
+- Erişilebilirlik (Accessibility) uyumluluğu
+- Performance optimizasyonu
+- Critical CSS
+- DNS prefetch ve preconnect
+- Manifest.json ile app-like deneyim
 
 ## 📋 İçerik
 
@@ -32,20 +41,46 @@ Modern ve profesyonel dijital pazarlama ajansı websitesi. Responsive tasarım, 
 
 - HTML5
 - CSS3
-- JavaScript
-- Font Awesome
-- Google Fonts
+- JavaScript (ES6+)
+- Font Awesome 6.0
+- Google Fonts (Inter)
+- Service Worker API
+- PWA (Progressive Web App)
+- Schema.org markup
+- Open Graph Protocol
+- Twitter Cards
+- Critical CSS
+- Performance APIs
 
 ## 📁 Dosya Yapısı
 
 ```
 btadijital/
-index.html
-styles.css
-styles.min.css
-script.js
-script.min.js
-README.md
+├── index.html              # Ana sayfa
+├── about.html              # Hakkımızda sayfası
+├── services.html           # Hizmetler sayfası
+├── blog.html               # Blog sayfası
+├── contact.html            # İletişim sayfası
+├── influencer.html         # Influencer Marketing sayfası
+├── dashboard.html          # Dashboard (giriş gerekli)
+├── coming-soon.html        # Yakında sayfası
+├── 404.html               # 404 hata sayfası
+├── styles.css              # Ana CSS dosyası
+├── styles.min.css          # Minify edilmiş CSS
+├── critical.css            # Critical CSS
+├── script.js               # Ana JavaScript dosyası
+├── script.min.js           # Minify edilmiş JavaScript
+├── sw.js                   # Service Worker
+├── manifest.json           # PWA manifest
+├── sitemap.xml             # XML sitemap
+├── robots.txt              # Robots.txt
+├── browserconfig.xml       # Microsoft Edge/IE config
+├── btadijital.jpg          # Logo (JPEG)
+├── btadijital.webp         # Logo (WebP)
+├── instagram-logo.svg      # Instagram ikonu
+├── facebook-logo.svg       # Facebook ikonu
+├── tiktok-logo.svg         # TikTok ikonu
+└── README.md               # Proje dokümantasyonu
 ```
 
 ## 🚀 Kurulum
@@ -128,11 +163,48 @@ Sitenizi ücretsiz olarak GitHub Pages veya Netlify ile kolayca yayınlayabilirs
 
 ## 🔍 SEO & Performans
 
-- Semantik HTML
-- Meta etiketleri
-- Alt etiketleri
-- Hızlı yükleme (minify dosyalar)
-- Mobile-first tasarım
+### SEO Optimizasyonları
+- Semantik HTML5 yapısı
+- Meta etiketleri (title, description, keywords)
+- Open Graph ve Twitter Card meta etiketleri
+- Schema.org structured data markup
+- XML sitemap (sitemap.xml)
+- Robots.txt dosyası
+- Canonical URL'ler
+- Alt etiketleri ve görsel optimizasyonu
+- Semantic HTML elementleri
+
+### Performans Optimizasyonları
+- Critical CSS inline loading
+- Minify edilmiş CSS ve JavaScript dosyaları
+- WebP formatında görseller
+- DNS prefetch ve preconnect
+- Service Worker ile caching
+- Lazy loading (hazırlanıyor)
+- Font display swap
+- Resource hints (preload, prefetch)
+
+### PWA Özellikleri
+- Manifest.json ile app-like deneyim
+- Service Worker ile offline çalışma
+- Installable web app
+- App icons ve splash screens
+- Background sync (hazırlanıyor)
+
+### Erişilebilirlik (Accessibility)
+- ARIA labels ve roles
+- Keyboard navigation desteği
+- Screen reader uyumluluğu
+- Color contrast uyumluluğu
+- Semantic HTML yapısı
+- Focus management
+- Alt text'ler
+
+### Lighthouse Puanları (Beklenen)
+- Performance: 95+
+- Accessibility: 98+
+- Best Practices: 95+
+- SEO: 100
 
 ## 🤝 Katkıda Bulunma
 

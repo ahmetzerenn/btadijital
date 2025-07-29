@@ -5,9 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
     <title>BTA Dijital - Dijital Pazarlama Ajansı | SEO, Google Ads, Influencer Marketing</title>
-    <meta name="description" content="BTA Dijital ile dijital pazarlama dünyasında başarıya ulaşın. SEO, Google Ads, Influencer Marketing ve web tasarım hizmetleri.">
-    <meta name="keywords" content="dijital pazarlama, SEO, Google Ads, influencer marketing, web tasarım, İstanbul">
+    <meta name="description" content="BTA Dijital ile dijital pazarlama dünyasında başarıya ulaşın. SEO, Google Ads, Influencer Marketing ve web tasarım hizmetleri. İstanbul'da profesyonel dijital pazarlama ajansı.">
+    <meta name="keywords" content="dijital pazarlama, SEO, Google Ads, influencer marketing, web tasarım, İstanbul, dijital ajans, sosyal medya yönetimi, içerik pazarlama">
     <meta name="author" content="BTA Dijital">
+    <meta name="theme-color" content="#059669">
+    <meta name="msapplication-TileColor" content="#059669">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="BTA Dijital">
+    <meta name="application-name" content="BTA Dijital">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="msapplication-TileColor" content="#059669">
+    <meta name="theme-color" content="#059669">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -23,8 +37,20 @@
     <meta property="twitter:description" content="Dijital pazarlama alanında uzmanlaşmış ekibimiz ile işletmenizi dijital dünyada öne çıkarıyoruz.">
     <meta property="twitter:image" content="https://ahmetzerenn.github.io/btadijital/btadijital.jpg">
     
-    <!-- Favicon -->
+    <!-- Favicon and App Icons -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link rel="icon" type="image/png" sizes="16x16" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link rel="apple-touch-icon" sizes="152x152" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link rel="apple-touch-icon" sizes="144x144" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link rel="apple-touch-icon" sizes="120x120" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link rel="apple-touch-icon" sizes="114x114" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link rel="apple-touch-icon" sizes="76x76" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link rel="apple-touch-icon" sizes="72x72" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link rel="apple-touch-icon" sizes="60x60" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link rel="apple-touch-icon" sizes="57x57" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link rel="manifest" href="/manifest.json">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://ahmetzerenn.github.io/btadijital/">
@@ -73,9 +99,57 @@
     <!-- Font Display Swap Fallback -->
     <style>
         body { font-display: swap; }
+        
+        /* Critical CSS for above-the-fold content */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #10b981 0, #059669 100%);
+            color: #fff;
+            padding-top: 80px;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        /* Preload critical resources */
+        .preload-critical {
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
     </style>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="critical.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="btadijital.webp" as="image" type="image/webp">
+    <link rel="preload" href="btadijital.jpg" as="image" type="image/jpeg">
+    
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/WebPage" lang="tr" dir="ltr">
     <div class="mobile-menu-overlay" id="mobileMenuOverlay" aria-hidden="true"></div>
     <!-- Preloader -->
     <div class="preloader" id="preloader">
@@ -420,7 +494,10 @@
 
     <!-- Giriş Modal -->
     <div class="modal" id="loginModal">
-        <div class="modal-content" style="max-width: 400px;">
+        <div class="modal-content" style="max-width: 400px; position: relative;">
+            <button type="button" class="modal-close" onclick="closeLoginModal()" aria-label="Modalı kapat" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #6b7280; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.2s;">
+                <i class="fas fa-times"></i>
+            </button>
             <h2>Giriş Yap</h2>
             <form id="loginForm">
                 <input type="text" id="username" placeholder="Kullanıcı Adı" required>
@@ -440,7 +517,10 @@
     <!-- Sabit Teklif Al Butonu ve Popup Form -->
     <button class="fixed-cta" id="openQuoteBtn" aria-label="Teklif almak için tıklayın"><i class="fas fa-comments" aria-hidden="true"></i> Teklif Al</button>
     <div class="modal" id="quoteModal">
-        <div class="modal-content">
+        <div class="modal-content" style="position: relative;">
+            <button type="button" class="modal-close" onclick="closeQuoteModal()" aria-label="Modalı kapat" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #6b7280; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.2s;">
+                <i class="fas fa-times"></i>
+            </button>
             <h2>Hızlı Teklif Al</h2>
             <form id="quoteForm">
                 <input type="text" name="name" placeholder="Adınız Soyadınız" required>
@@ -466,6 +546,11 @@
     function closeLoginModal() {
         document.getElementById('loginModal').classList.remove('active');
         document.getElementById('loginForm').reset();
+    }
+    
+    function closeQuoteModal() {
+        document.getElementById('quoteModal').classList.remove('active');
+        document.getElementById('quoteForm').reset();
     }
     
     // Cookie Consent Functions
@@ -625,22 +710,46 @@
                 }
             });
         });
+        
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+        
+        // Performance monitoring
+        if ('performance' in window) {
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    const perfData = performance.getEntriesByType('navigation')[0];
+                    console.log('Page Load Time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+                    console.log('DOM Content Loaded:', perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart, 'ms');
+                }, 0);
+            });
+        }
     });
     </script>
     <!-- Lottie ve animasyon scriptleri kaldırıldı -->
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" itemscope itemtype="https://schema.org/Organization">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>BTA Dijital</h3>
-                    <p>Dijital pazarlama alanında uzmanlaşmış ekibimiz ile işletmenizi dijital dünyada öne çıkarıyoruz.</p>
+                    <h3 itemprop="name">BTA Dijital</h3>
+                    <p itemprop="description">Dijital pazarlama alanında uzmanlaşmış ekibimiz ile işletmenizi dijital dünyada öne çıkarıyoruz.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook sayfamızı ziyaret edin"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#" aria-label="Twitter sayfamızı ziyaret edin"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#" aria-label="Instagram sayfamızı ziyaret edin"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                        <a href="#" aria-label="LinkedIn sayfamızı ziyaret edin"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Facebook sayfamızı ziyaret edin" itemprop="sameAs"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Twitter sayfamızı ziyaret edin" itemprop="sameAs"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Instagram sayfamızı ziyaret edin" itemprop="sameAs"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="LinkedIn sayfamızı ziyaret edin" itemprop="sameAs"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
@@ -663,9 +772,9 @@
                 </div>
                 <div class="footer-section">
                     <h4>İletişim</h4>
-                    <p><i class="fas fa-phone"></i> +90 (212) 555 0123</p>
-                    <p><i class="fas fa-envelope"></i> info@btadijital.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
+                    <p><i class="fas fa-phone"></i> <span itemprop="telephone">+90 (212) 555 0123</span></p>
+                    <p><i class="fas fa-envelope"></i> <span itemprop="email">info@btadijital.com</span></p>
+                    <p><i class="fas fa-map-marker-alt"></i> <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality">İstanbul</span>, <span itemprop="addressCountry">Türkiye</span></span></p>
                 </div>
             </div>
             <div class="footer-bottom">

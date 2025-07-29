@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ahmetzerenn.github.io/btadijital/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow specific files
+Disallow: /dashboard.html
+Disallow: /critical.css
+Disallow: /script.js
+Disallow: /styles.css 

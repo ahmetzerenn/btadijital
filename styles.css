@@ -17,6 +17,14 @@ body {
     --primary: #059669;
     --primary-dark: #047857;
     --accent: #fbbf24;
+    --cta-blue: #1e40af;
+    --cta-blue-hover: #1e3a8a;
+    --cta-blue-dark: #3b82f6;
+    --cta-blue-dark-hover: #2563eb;
+    --cta-black: #1f2937;
+    --cta-black-hover: #111827;
+    --cta-black-dark: #374151;
+    --cta-black-dark-hover: #1f2937;
     --soft-gray: #f3f4f6;
     --card-bg: #fff;
     --card-shadow: 0 4px 24px rgba(5, 150, 105, 0.08);
@@ -127,16 +135,24 @@ body.dark-theme .btn-secondary:hover {
     color: #232329 !important;
 }
 
-body.dark-theme .fixed-cta,
-body.dark-theme .back-to-top {
-    background: var(--dark-btn) !important;
+body.dark-theme .fixed-cta {
+    background: var(--cta-black-dark) !important;
     color: #fff !important;
-    box-shadow: 0 4px 24px rgba(5,150,105,0.18) !important;
+    box-shadow: 0 4px 24px rgba(55,65,81,0.18) !important;
 }
 
-body.dark-theme .fixed-cta:hover,
+body.dark-theme .fixed-cta:hover {
+    background: var(--cta-black-dark-hover) !important;
+}
+
+body.dark-theme .back-to-top {
+    background: var(--cta-black-dark) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 24px rgba(55,65,81,0.18) !important;
+}
+
 body.dark-theme .back-to-top:hover {
-    background: var(--dark-btn-hover) !important;
+    background: var(--cta-black-dark-hover) !important;
 }
 
 body.dark-theme input,
@@ -3051,16 +3067,16 @@ body.dark-theme .preloader-progress-bar {
 .fixed-cta {
     position: fixed;
     right: 32px;
-    bottom: 32px;
+    bottom: 60px;
     z-index: 1001;
-    background: #059669;
+    background: var(--cta-black);
     color: white;
     border: none;
     border-radius: 50px;
     padding: 1rem 2rem;
     font-size: 1.1rem;
     font-weight: 700;
-    box-shadow: 0 4px 16px rgba(16,185,129,0.15);
+    box-shadow: 0 4px 16px rgba(31,41,55,0.15);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -3068,8 +3084,8 @@ body.dark-theme .preloader-progress-bar {
     transition: background 0.2s, box-shadow 0.2s;
 }
 .fixed-cta:hover {
-    background: #047857;
-    box-shadow: 0 8px 32px rgba(16,185,129,0.25);
+    background: var(--cta-black-hover);
+    box-shadow: 0 8px 32px rgba(31,41,55,0.25);
 }
 
 #quoteModal.modal {
@@ -3117,7 +3133,7 @@ body.dark-theme .preloader-progress-bar {
 @media (max-width: 600px) {
     .fixed-cta {
         right: 16px;
-        bottom: 16px;
+        bottom: 60px;
         padding: 0.7rem 1.2rem;
         font-size: 1rem;
     }
@@ -3572,6 +3588,41 @@ body {
     -webkit-backdrop-filter: blur(5px);
 }
 
+/* Modal Close Button */
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #6b7280;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+    z-index: 1;
+}
+
+.modal-close:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: #374151;
+    transform: scale(1.1);
+}
+
+body.dark-theme .modal-close {
+    color: #9ca3af;
+}
+
+body.dark-theme .modal-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f3f4f6;
+}
+
 /* Reduce animation on mobile for better performance */
 @media (max-width: 768px) {
     .hero-graphic i {
@@ -3705,10 +3756,10 @@ body {
 .back-to-top {
     position: fixed;
     right: 36px;
-    bottom: 100px;
+    bottom: 140px;
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #059669, #10b981);
+    background: var(--cta-black);
     color: white;
     border: none;
     border-radius: 50%;
@@ -3718,7 +3769,7 @@ body {
     transition: all 0.3s ease;
     z-index: 1002;
     font-size: 1.6rem;
-    box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
+    box-shadow: 0 4px 15px rgba(31, 41, 55, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3729,13 +3780,13 @@ body {
 }
 .back-to-top:hover {
     transform: translateY(-3px) scale(1.08);
-    box-shadow: 0 8px 24px rgba(5, 150, 105, 0.4);
-    background: linear-gradient(135deg, #10b981, #059669);
+    box-shadow: 0 8px 24px rgba(31, 41, 55, 0.4);
+    background: var(--cta-black-hover);
 }
 @media (max-width: 600px) {
     .back-to-top {
         right: 16px;
-        bottom: 80px;
+        bottom: 140px;
         width: 48px;
         height: 48px;
         font-size: 1.2rem;
